@@ -1,3 +1,7 @@
+# Rick-N-Morty-Wiki
+
+A wiki of characters, episodes and locations of 'Rick and Morty' using it's public API
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
