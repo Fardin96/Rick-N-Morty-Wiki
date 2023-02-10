@@ -16,6 +16,7 @@ function HeaderImage() {
           height: Size.header_height,
           width: Size.header_width,
           margin: Margin.header_image_top,
+          padding: 0,
           border: "1px solid red",
         }}
       />
