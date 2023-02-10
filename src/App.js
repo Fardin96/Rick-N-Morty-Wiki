@@ -6,6 +6,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  // initializing bugfix branch!
   return (
     <div className="App">
       <header className="App-header">
