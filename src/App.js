@@ -6,6 +6,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  // added a new feature!
   return (
     <div className="App">
       <header className="App-header">
