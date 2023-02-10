@@ -7,6 +7,9 @@ import HeaderImage from "./components/HeaderImage";
 import HeaderText from "./components/HeaderText";
 
 function App() {
+  // initializing bugfix branch!
+  // initializing feature branch!
+  
   return (
     <div
       className="App"
