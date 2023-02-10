@@ -4,11 +4,24 @@
 import React from "react";
 import "./App.css";
 import HeaderImage from "./components/HeaderImage";
+import HeaderText from "./components/HeaderText";
 
 function App() {
   return (
-    <div className="App" style={{ border: "1px solid blue" }}>
+    <div
+      className="App"
+      style={{
+        border: "1px solid black",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        // justifyContent: "center",
+      }}
+    >
+      {/* <h1 style={{ color: "black" }}>THE</h1> */}
+
       <HeaderImage />
+      <HeaderText />
     </div>
   );
 }
