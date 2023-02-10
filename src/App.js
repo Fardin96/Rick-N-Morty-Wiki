@@ -7,9 +7,6 @@ import HeaderImage from "./components/HeaderImage";
 import HeaderText from "./components/HeaderText";
 
 function App() {
-  // initializing bugfix branch!
-  // initializing feature branch!
-  
   return (
     <div
       className="App"
@@ -21,8 +18,6 @@ function App() {
         // justifyContent: "center",
       }}
     >
-      {/* <h1 style={{ color: "black" }}>THE</h1> */}
-
       <HeaderImage />
       <HeaderText />
     </div>
