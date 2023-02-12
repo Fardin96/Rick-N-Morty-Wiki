@@ -6,6 +6,8 @@ export default {
   bubble: "214.6px",
   portal_height: "145px",
   portal_width: "225px",
+  gun_width: "318.91px",
+  gun_height: "311px",
   large: "24px",
   medium: "20px",
   small: "16px",
