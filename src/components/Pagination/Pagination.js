@@ -16,7 +16,7 @@ function Pagination({ setPage, page, totalPages }) {
   return (
     <div
       // style={{ border: "1px solid black" }}
-      className="container d-flex justify-content-center align-items-center my-3 "
+      className="container d-flex justify-content-center align-items-center my-3 travels-demi-bold"
     >
       Page
       <button onClick={prevHandler} className="btn btn-primary mx-3">

@@ -16,17 +16,19 @@ import Navbar from "./components/NavBar";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-      </div>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/characters" element={<Characters />} />
-        <Route path="/episodes" element={<Episodes />} />
-        <Route path="/locations" element={<Locations />} />
-      </Routes>
-    </Router>
+    <div className="home-bg-image">
+      <Router>
+        <div className="App">
+          <Navbar />
+        </div>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/characters" element={<Characters />} />
+          <Route path="/episodes" element={<Episodes />} />
+          <Route path="/locations" element={<Locations />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

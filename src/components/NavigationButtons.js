@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 function NavigationButtons() {
   const navigate = useNavigate();
   return (
-    <div className="d-flex flex-row flex-row-reverse">
+    <div className="d-flex flex-row ">
       <button
         className="mx-1 my-2 btn btn-primary"
         onClick={() => {

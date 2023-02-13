@@ -6,8 +6,9 @@ import React, { useEffect, useState } from "react";
 
 import Card from "../components/Cards/Card";
 import Pagination from "../components/Pagination/Pagination";
-import NavigationButtons from "../components/NavigatioButtons";
+import NavigationButtons from "../components/NavigationButtons";
 import "../App.css";
+import Size from "../assets/constants/Size";
 
 function Characters() {
   const [page, setPage] = useState(1);
@@ -24,13 +25,21 @@ function Characters() {
 
   return (
     <div className="App">
-      <h1 className="text-center">this is the Characters page!</h1>
       <div
         className="container"
         // style={{ border: "2px solid orange" }}
       >
         <div className="row">
-          <NavigationButtons />
+          <div
+            className="d-flex justify-content-between align-items-center travels-demi-bold"
+            style={{
+              fontSize: Size.pill_height,
+              // border: "2px solid orange"
+            }}
+          >
+            The Cast
+            <NavigationButtons />
+          </div>
           <Card apiData={apiData} />
         </div>
         <Pagination

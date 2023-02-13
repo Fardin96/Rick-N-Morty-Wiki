@@ -4,8 +4,9 @@
 /* eslint-disable quotes */
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from "react";
+import Size from "../assets/constants/Size";
 import Card from "../components/Cards/Card";
-import NavigationButtons from "../components/NavigatioButtons";
+import NavigationButtons from "../components/NavigationButtons";
 import Pagination from "../components/Pagination/Pagination";
 
 function Episodes() {
@@ -41,25 +42,38 @@ function Episodes() {
 
   return (
     <div className="App">
-      <h1 className="text-center">this is the episodes page!</h1>
       <div
         className="container"
         // style={{ border: "2px solid orange" }}
       >
         <div className="row">
           <div
-            className="d-flex flex-column "
-            style={{ border: "1px solid blue" }}
+            className="d-flex flex-column align-items-center justify-content-between "
+            // style={{ border: "1px solid blue" }}
           >
             <div
-              // className="d-flex flex-nowrap"
-              style={{ border: "1px solid green" }}
+              className="container d-flex align-items-center justify-content-between travels-demi-bold"
+              style={{
+                fontSize: Size.medium,
+                // border: "1px solid green",
+              }}
             >
-              <div className="my-1">{apiData?.name}</div>
-              <div className="my-1">on</div>
-              <div className="my-1">{apiData?.air_date}</div>
+              <div className="my-1 mx-1">{`Episode: ${apiData?.episode}`}</div>
+              <div className="my-1 mx-5">{`"${apiData?.name}"`}</div>
+              <div className="my-1 mx-2">{`Air Date: ${apiData?.air_date}`}</div>
             </div>
-            <NavigationButtons />
+            <div
+              className="container d-flex p-2 flex-row align-items-center justify-content-between travels-demi-bold"
+              style={{
+                fontSize: Size.pill_height,
+                // position: "absolute",
+                // top: 0,
+                //  border: "1px solid red"
+              }}
+            >
+              The Cast
+              <NavigationButtons />
+            </div>
           </div>
           <Card apiData={{ results }} />
         </div>

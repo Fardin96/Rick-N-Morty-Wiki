@@ -3,6 +3,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable quotes */
 import React from "react";
+import Size from "../../assets/constants/Size";
 
 function Card({ apiData }) {
   const { results } = apiData;
@@ -15,7 +16,12 @@ function Card({ apiData }) {
       style={{ border: "1px solid red" }}
     >
       <img className="img-fluid" src={item.image} alt="characters" />
-      <div className="content my-4">{item.name}</div>
+      <div
+        className="content my-4 travels-light"
+        style={{ fontSize: Size.small }}
+      >
+        {item.name}
+      </div>
     </div>
   ));
 

@@ -4,8 +4,9 @@
 /* eslint-disable quotes */
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from "react";
+import Size from "../assets/constants/Size";
 import Card from "../components/Cards/Card";
-import NavigationButtons from "../components/NavigatioButtons";
+import NavigationButtons from "../components/NavigationButtons";
 import Pagination from "../components/Pagination/Pagination";
 
 function Locations() {
@@ -41,22 +42,32 @@ function Locations() {
 
   return (
     <div className="App">
-      <h1 className="text-center">this is the locations page!</h1>
       <div
         className="container"
         // style={{ border: "2px solid orange" }}
       >
         <div className="row">
           <div
-            className="d-flex flex-column"
-            style={{ border: "1px solid blue" }}
+            className="d-flex flex-column align-items-center justify-content-between "
+            // style={{ border: "1px solid blue" }}
           >
-            <div>
-              <div className="my-1">{apiData?.name}</div>
-              <div className="my-1">on</div>
-              <div className="my-1">{apiData?.dimension}</div>
+            <div
+              style={{ fontSize: Size.medium }}
+              className="container d-flex align-items-center justify-content-between travels-demi-bold"
+            >
+              <div className="my-1">{`Location: ${apiData?.name}`}</div>
+              <div className="my-1">{`Dimension: ${apiData?.dimension}`}</div>
             </div>
-            <NavigationButtons />
+            <div
+              className="container d-flex flex-row align-items-center justify-content-between travels-demi-bold"
+              style={{
+                fontSize: Size.pill_height,
+                // border: "1px solid black"
+              }}
+            >
+              The Cast
+              <NavigationButtons />
+            </div>
           </div>
           <Card apiData={{ results }} />
         </div>

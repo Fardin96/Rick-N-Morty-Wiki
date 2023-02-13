@@ -108,3 +108,17 @@
 .travels-thin-italic {
   font-family: "ThinItalic";
 }
+
+.home-bg-image{
+  background-image: 
+  url('./assets/images/Background-home.png'),
+  url('./assets/images/Spiral-bg-home.png');
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+  width: 100vw, 100vw;
+  height: 300vh;
+  /* backgroundRepeat: 'no-repeat',
+        width: '100vw',
+        height: '100vh' */
+  /* backgroundSize: 'cover', */
+}
