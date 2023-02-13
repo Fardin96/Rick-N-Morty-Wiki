@@ -5,6 +5,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from "react";
 import Card from "../components/Cards/Card";
+import NavigationButtons from "../components/NavigatioButtons";
 import Pagination from "../components/Pagination/Pagination";
 
 function Episodes() {
@@ -47,12 +48,18 @@ function Episodes() {
       >
         <div className="row">
           <div
-            className="d-flex flex-column"
-            // style={{ border: "1px solid blue" }}
+            className="d-flex flex-column "
+            style={{ border: "1px solid blue" }}
           >
-            <div className="my-1">{apiData?.name}</div>
-            <div className="my-1">on</div>
-            <div className="my-1">{apiData?.air_date}</div>
+            <div
+              // className="d-flex flex-nowrap"
+              style={{ border: "1px solid green" }}
+            >
+              <div className="my-1">{apiData?.name}</div>
+              <div className="my-1">on</div>
+              <div className="my-1">{apiData?.air_date}</div>
+            </div>
+            <NavigationButtons />
           </div>
           <Card apiData={{ results }} />
         </div>

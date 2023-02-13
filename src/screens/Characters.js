@@ -1,16 +1,15 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable quotes */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from "react";
-import HeaderImage from "../components/HeaderImage";
-import HeaderText from "../components/HeaderText";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap";
-import "../App.css";
+
 import Card from "../components/Cards/Card";
 import Pagination from "../components/Pagination/Pagination";
+import NavigationButtons from "../components/NavigatioButtons";
+import "../App.css";
 
-function HomePage() {
+function Characters() {
   const [page, setPage] = useState(1);
   const [apiData, setApiData] = useState([]);
 
@@ -23,8 +22,6 @@ function HomePage() {
     })();
   }, [api]);
 
-  // console.log("total num of pages:", apiData.info.pages);
-
   return (
     <div className="App">
       <h1 className="text-center">this is the Characters page!</h1>
@@ -33,14 +30,7 @@ function HomePage() {
         // style={{ border: "2px solid orange" }}
       >
         <div className="row">
-          <div
-            className="d-flex flex-row flex-row-reverse"
-            // style={{ border: "1px solid blue" }}
-          >
-            <button className="mx-1 my-2 btn btn-primary">Characters</button>
-            <button className="mx-1 my-2 btn btn-primary">Locations</button>
-            <button className="mx-1 my-2 btn btn-primary">Episodes</button>
-          </div>
+          <NavigationButtons />
           <Card apiData={apiData} />
         </div>
         <Pagination
@@ -53,4 +43,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Characters;

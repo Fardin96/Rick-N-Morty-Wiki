@@ -5,6 +5,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from "react";
 import Card from "../components/Cards/Card";
+import NavigationButtons from "../components/NavigatioButtons";
 import Pagination from "../components/Pagination/Pagination";
 
 function Locations() {
@@ -40,7 +41,7 @@ function Locations() {
 
   return (
     <div className="App">
-      <h1 className="text-center">this is the episodes page!</h1>
+      <h1 className="text-center">this is the locations page!</h1>
       <div
         className="container"
         // style={{ border: "2px solid orange" }}
@@ -48,11 +49,14 @@ function Locations() {
         <div className="row">
           <div
             className="d-flex flex-column"
-            // style={{ border: "1px solid blue" }}
+            style={{ border: "1px solid blue" }}
           >
-            <div className="my-1">{apiData?.name}</div>
-            <div className="my-1">on</div>
-            <div className="my-1">{apiData?.dimension}</div>
+            <div>
+              <div className="my-1">{apiData?.name}</div>
+              <div className="my-1">on</div>
+              <div className="my-1">{apiData?.dimension}</div>
+            </div>
+            <NavigationButtons />
           </div>
           <Card apiData={{ results }} />
         </div>
