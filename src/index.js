@@ -7,8 +7,24 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import "./assets/Fonts/Font/TTTravels-BoldItalic.ttf";
+import "./assets/Fonts/Font/TTTravels-Black.ttf";
+import "./assets/Fonts/Font/TTTravels-BlackItalic.ttf";
 import "./assets/Fonts/Font/TTTravels-Bold.ttf";
+import "./assets/Fonts/Font/TTTravels-BoldItalic.ttf";
+import "./assets/Fonts/Font/TTTravels-DemiBold.ttf";
+import "./assets/Fonts/Font/TTTravels-DemiBoldItalic.ttf";
+import "./assets/Fonts/Font/TTTravels-ExtraBold.ttf";
+import "./assets/Fonts/Font/TTTravels-ExtraBoldItalic.ttf";
+import "./assets/Fonts/Font/TTTravels-ExtraLight.ttf";
+import "./assets/Fonts/Font/TTTravels-ExtraLightItalic.ttf";
+import "./assets/Fonts/Font/TTTravels-Italic.ttf";
+import "./assets/Fonts/Font/TTTravels-Light.ttf";
+import "./assets/Fonts/Font/TTTravels-LightItalic.ttf";
+import "./assets/Fonts/Font/TTTravels-Medium.ttf";
+import "./assets/Fonts/Font/TTTravels-MediumItalic.ttf";
+import "./assets/Fonts/Font/TTTravels-Regular.ttf";
+import "./assets/Fonts/Font/TTTravels-Thin.ttf";
+import "./assets/Fonts/Font/TTTravels-ThinItalic.ttf";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
