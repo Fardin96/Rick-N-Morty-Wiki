@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 import "../App.css";
 import Card from "../components/Cards/Card";
+import Pagination from "../components/Pagination/Pagination";
 
 function HomePage() {
   const [page, setPage] = useState(1);
@@ -18,22 +19,14 @@ function HomePage() {
   useEffect(() => {
     (async () => {
       const res = await fetch(api).then((data) => data.json());
-      setApiData(res);
+      await setApiData(res);
     })();
   }, [api]);
 
+  // console.log("total num of pages:", apiData.info.pages);
+
   return (
-    <div
-      className="App"
-      // className="col-"
-      // style={{
-      // border: "1px solid red",
-      // display: "flex",
-      // flexDirection: "column",
-      // alignItems: "center",
-      // justifyContent: "center",
-      // }}
-    >
+    <div className="App">
       <h1 className="text-center">this is the Characters page!</h1>
       <div
         className="container"
@@ -42,6 +35,11 @@ function HomePage() {
         <div className="row">
           <Card apiData={apiData} />
         </div>
+        <Pagination
+          setPage={setPage}
+          page={page}
+          totalPages={apiData.info.pages}
+        />
       </div>
     </div>
   );
