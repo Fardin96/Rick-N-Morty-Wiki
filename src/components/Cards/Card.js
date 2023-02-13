@@ -6,7 +6,7 @@ import React from "react";
 
 function Card({ apiData }) {
   const { results } = apiData;
-  //   console.log(results);
+  console.log("these are showing up in card", apiData.results);
 
   const res = results?.map((item) => (
     <div
