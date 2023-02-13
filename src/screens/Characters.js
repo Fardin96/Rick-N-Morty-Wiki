@@ -33,6 +33,14 @@ function HomePage() {
         // style={{ border: "2px solid orange" }}
       >
         <div className="row">
+          <div
+            className="d-flex flex-row flex-row-reverse"
+            // style={{ border: "1px solid blue" }}
+          >
+            <button className="mx-1 my-2 btn btn-primary">Characters</button>
+            <button className="mx-1 my-2 btn btn-primary">Locations</button>
+            <button className="mx-1 my-2 btn btn-primary">Episodes</button>
+          </div>
           <Card apiData={apiData} />
         </div>
         <Pagination
