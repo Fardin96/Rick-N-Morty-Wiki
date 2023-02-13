@@ -37,66 +37,74 @@
   }
 } */
 
+.travels-black {
+  font-family: "TravelsBlack";
+}
+
+.travels-black-italic {
+  font-family: "TravelsBlackItalic";
+}
+
+.travels-bold {
+  font-family: "TravelsBold";
+}
+
 .travels-bold-italic {
   font-family: "TravelsBoldItalic";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
-}
- 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-demi-bold {
+  font-family: "TravelsDemiBold";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-demi-bold-italic {
+  font-family: "TravelsDemiBoldItalic";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-extra-bold {
+  font-family: "ExtraBold";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-extra-bold-italic {
+  font-family: "ExtraBoldItalic";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-extra-light {
+  font-family: "ExtraLight";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-extra-light-italic {
+  font-family: "ExtraLightItalic";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-italic {
+  font-family: "Italic";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-light {
+  font-family: "Light";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-light-italic {
+  font-family: "LightItalic";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-medium {
+  font-family: "Medium";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-medium-italic {
+  font-family: "MediumItalic";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-regular {
+  font-family: "Regular";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-thin {
+  font-family: "Thin";
 }
 
-.travels-bold {
-  font-family: "TravelsBold";
+.travels-thin-italic {
+  font-family: "ThinItalic";
 }
