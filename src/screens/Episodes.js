@@ -10,8 +10,8 @@ import Pagination from "../components/Pagination/Pagination";
 function Episodes() {
   const [page, setPage] = useState(1);
   const [apiData, setApiData] = useState([]);
-  const [results, setResults] = useState([]);
-  const [totalPages, setTotalPages] = useState(0);
+  const [results, setResults] = useState([]); // <- this
+  const [totalPages, setTotalPages] = useState(0); // <- this
 
   const api = `https://rickandmortyapi.com/api/episode/${page}`;
   const pageApi = `https://rickandmortyapi.com/api/episode`;

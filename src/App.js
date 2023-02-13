@@ -6,13 +6,15 @@ import "./App.css";
 import HomePage from "./screens/HomePage";
 import Characters from "./screens/Characters";
 import Episodes from "./screens/Episodes";
+import Locations from "./screens/Locatons";
 
 function App() {
   return (
     <>
       {/* <HomePage /> */}
       {/* <Characters /> */}
-      <Episodes />
+      {/* <Episodes /> */}
+      <Locations />
     </>
   );
 }
