@@ -38,7 +38,7 @@ function HomePage() {
         <Pagination
           setPage={setPage}
           page={page}
-          totalPages={apiData.info.pages}
+          totalPages={apiData.info?.pages}
         />
       </div>
     </div>
