@@ -10,7 +10,7 @@ function NavigationButtons() {
   return (
     <div className="d-flex flex-row ">
       <button
-        className="mx-1 my-2 btn btn-primary"
+        className="mx-1 my-2 btn btn-success"
         onClick={() => {
           navigate("/characters");
         }}
@@ -18,7 +18,7 @@ function NavigationButtons() {
         Characters
       </button>
       <button
-        className="mx-1 my-2 btn btn-primary"
+        className="mx-1 my-2 btn btn-success"
         onClick={() => {
           navigate("/locations");
         }}
@@ -26,7 +26,7 @@ function NavigationButtons() {
         Locations
       </button>
       <button
-        className="mx-1 my-2 btn btn-primary"
+        className="mx-1 my-2 btn btn-success"
         onClick={() => {
           navigate("/episodes");
         }}
