@@ -112,11 +112,12 @@
 .home-bg-image{
   background-image: 
   url('./assets/images/Background-home.png'),
-  url('./assets/images/Spiral-bg-home.png');
-  background-size: cover, cover;
-  background-repeat: no-repeat, no-repeat;
-  width: 100vw, 100vw;
-  height: 300vh;
+  url('./assets/images/Spiral-bg-home.png'),
+  url('./assets/images/Star-bg-home.png');
+  background-size: cover, cover, cover;
+  background-repeat: no-repeat, no-repeat, repeat;
+  width: 150vw, 150vw, 150vw;
+  height: 150vh;
   /* backgroundRepeat: 'no-repeat',
         width: '100vw',
         height: '100vh' */
