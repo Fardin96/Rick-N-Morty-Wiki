@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 } */
+
+.travels-bold-italic {
+  font-family: "TravelsBoldItalic";
+ }
+
+.travels-bold {
+  font-family: "TravelsBold";
+ }
+ 

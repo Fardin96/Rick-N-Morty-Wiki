@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "TravelsBoldItalic";
+  src: local("TravelsBoldItalic"),
+   url("./assets/Fonts/Font/TTTravels-BoldItalic.ttf") format("truetype");
+   font-weight: bold;
+   font-size: 128px;
+}
+
+@font-face {
+  font-family: "TravelsBold";
+  src: local("TravelsBold"),
+   url("./assets/Fonts/Font/TTTravels-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
