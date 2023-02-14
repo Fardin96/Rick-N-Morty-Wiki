@@ -31,7 +31,7 @@ function Characters() {
       >
         <div className="row">
           <div
-            className="d-flex justify-content-between align-items-center travels-demi-bold"
+            className="d-flex justify-content-between align-items-center travels-demi-bold text-white"
             style={{
               fontSize: Size.pill_height,
               // border: "2px solid orange"

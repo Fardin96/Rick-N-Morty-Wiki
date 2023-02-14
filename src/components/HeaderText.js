@@ -15,15 +15,15 @@ function HeaderText() {
       width: Size.bubble,
       margin: 0,
       position: "absolute",
-      left: -20,
-      top: 50,
+      left: -140,
+      top: -110,
     },
     pill: {
       height: Size.pill_width,
       width: Size.pill_height,
       position: "absolute",
-      top: 160,
-      right: 240,
+      // top: 0,
+      right: 120,
     },
     portal: {
       height: Size.portal_height,
@@ -33,8 +33,8 @@ function HeaderText() {
       height: Size.gun_height,
       width: Size.gun_width,
       position: "absolute",
-      top: 200,
-      left: 1050,
+      top: 50,
+      right: -120,
     },
     text: {
       fontSize: Size.h1,
@@ -42,7 +42,7 @@ function HeaderText() {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={{ position: "relative" }}>
       <div
         className="row d-flex flex-row"
         // style={{ border: "1px solid blue" }}
@@ -50,19 +50,22 @@ function HeaderText() {
         <div className="d-flex flex-row ">
           <img style={styles.bubble} src={BUBBLE} alt="BUBBLE-LOGO" />
           <img style={styles.pill} src={PILL} alt="PILL-LOGO" />
-          <h1 style={styles.text} className="travels-bold-italic">
+          <h1 style={styles.text} className="travels-bold-italic text-white">
             THE
           </h1>
           <img style={styles.portal} src={PORTAL} alt="PORTAL-LOGO" />
-          <h1 style={styles.text} className="travels-bold">
+          <h1 style={styles.text} className="travels-bold text-gradient">
             RICK &
           </h1>
         </div>
         <div className="d-flex flex-row ">
-          <h1 style={styles.text} className="travels-bold mx-3">
+          <h1 style={styles.text} className="travels-bold mx-3 text-gradient">
             MORTY
           </h1>
-          <h1 style={styles.text} className="travels-bold-italic mx-3">
+          <h1
+            style={styles.text}
+            className="travels-bold-italic mx-3 text-white"
+          >
             WIKI
           </h1>
         </div>

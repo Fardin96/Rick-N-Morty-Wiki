@@ -109,17 +109,64 @@
   font-family: "ThinItalic";
 }
 
+.text-white{
+  color: white
+}
+
+/* #9DFE00
+#14D9E5 */
+
+.text-gradient{
+  background: linear-gradient(to right, #9DFE00 0%, #14D9E5 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.nav-btn:hover{
+  color:  #9DFE00;
+  border-color: #9DFE00;  
+}
+
+.nav-btn{
+  color: white;
+  border-color: #9DFE00;
+}
+
+/* .card{
+  border-color: white;
+  border-width: 1px; 
+} */
+
 .home-bg-image{
+  background-color: #191D29;
   background-image: 
-  url('./assets/images/Background-home.png'),
   url('./assets/images/Star-bg-home.png'),
+  url('./assets/images/Background-home.png'),
   url('./assets/images/Spiral-bg-home.png');
-  background-size: cover, cover, cover;
-  background-repeat: no-repeat, no-repeat, repeat;
-  width: 150vw, 150vw, 1vw;
-  height: 150vh;
+  background-size: contain, cover, cover;
+  -webkit-background-size: contain, cover, cover;
+  -moz-background-size: contain, cover, cover;
+  -o-background-size: contain, cover, cover;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  height: 300vh; 
+  width: 150vw;
   /* backgroundRepeat: 'no-repeat',
         width: '100vw',
         height: '100vh' */
   /* backgroundSize: 'cover', */
 }
+
+/* .bg-image{
+  background-color: #191D29;
+  background-image: 
+  url('./assets/images/Star-bg-home.png'),
+  url('./assets/images/Background-home.png'),
+  url('./assets/images/Spiral-bg-home.png');
+  background-size: contain, cover, cover;
+  -webkit-background-size: contain, cover, cover;
+  -moz-background-size: contain, cover, cover;
+  -o-background-size: contain, cover, cover;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  height: 100%; 
+  width: 100%;
+} */

@@ -16,14 +16,14 @@ function Pagination({ setPage, page, totalPages }) {
   return (
     <div
       // style={{ border: "1px solid black" }}
-      className="container d-flex justify-content-center align-items-center my-5 travels-demi-bold"
+      className="container d-flex justify-content-center align-items-center my-5 travels-demi-bold text-white"
     >
       Page
-      <button onClick={prevHandler} className="btn btn-success mx-3">
+      <button onClick={prevHandler} className="btn nav-btn mx-3">
         Previous
       </button>
       {page}
-      <button onClick={nextHandler} className="btn btn-success mx-3">
+      <button onClick={nextHandler} className="btn nav-btn mx-3">
         Next
       </button>
       <div className="d-flex flex-row">

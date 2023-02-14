@@ -16,30 +16,37 @@ function HomePage() {
 
   return (
     <div
-    // className="home-bg-image""
+    // className="home-bg-image"
     // style={{
     //   border: "1px solid black",
     // }}
     >
       <HeaderText />
-      <div className="travels-medium">
+      <div
+        className="travels-medium text-white d-flex my-5 justify-content-center"
+        // style={{ border: "3px solid red" }}
+      >
         <div
+          className="mx-5"
           style={{
             fontSize: Size.large,
-            position: "absolute",
-            bottom: 40,
-            right: 200,
+            // position: "absolute",
+            // bottom: 40,
+            // right: 200,
           }}
         >
           Meet The Cast
         </div>
         <button
-          style={{
-            position: "absolute",
-            bottom: 40,
-            right: 80,
-          }}
-          className="btn btn-success d-flex align-items-center"
+          className="mx-5"
+          style={
+            {
+              // position: "absolute",
+              // bottom: 40,
+              // right: 80,
+            }
+          }
+          className="btn nav-btn"
           onClick={() => {
             navigate("/characters");
           }}
