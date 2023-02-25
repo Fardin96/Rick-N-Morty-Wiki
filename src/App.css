@@ -144,7 +144,7 @@
   background-position: top center, bottom center, bottom right;
   background-position-y: top, 85%, bottom;
   background-repeat: no-repeat, no-repeat, no-repeat;
-  min-height: 300vh;
+  min-height: 350vh;
 }
 
 .cast-bg-image{
@@ -181,4 +181,46 @@
   margin-left: 20px;
   margin-right: 20px;
 }
+
+.scroll-view{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 21%;
+  gap: 30px;
+  scroll-behavior: smooth;
+  
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  border: 3px solid red;
+}
+
+.scroll-view::-webkit-scrollbar{
+  -webkit-appearance: none;
+}
+
+.scroll-view-card{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 3px solid blue;
+}
+
+.snaps-inline{
+  scroll-snap-type: inline mandatory;
+}
+
+.snaps-inline > *{
+  scroll-snap-align: start; 
+}
+
+.scroll-button{
+  height: 100px;
+  width: 100px;
+}
+
+.scroll-view-card > img{
+  /* aspect-ratio: 5/5; */
+}
+
 
