@@ -113,14 +113,16 @@
   color: white
 }
 
-/* #9DFE00
-#14D9E5 */
+.text-blue{
+  color: #14D9E5;
+}
 
 .text-gradient{
   background: linear-gradient(to right, #9DFE00 0%, #14D9E5 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+
 
 .nav-btn:hover{
   color:  #9DFE00;
@@ -132,41 +134,51 @@
   border-color: #9DFE00;
 }
 
-/* .card{
-  border-color: white;
-  border-width: 1px; 
-} */
-
 .home-bg-image{
   background-color: #191D29;
   background-image: 
-  url('./assets/images/Star-bg-home.png'),
   url('./assets/images/Background-home.png'),
+  url('./assets/images/Star-bg-home.png'),
   url('./assets/images/Spiral-bg-home.png');
-  background-size: contain, cover, cover;
-  -webkit-background-size: contain, cover, cover;
-  -moz-background-size: contain, cover, cover;
-  -o-background-size: contain, cover, cover;
+  background-size: contain, 95% 10%, auto;
+  background-position: top center, bottom center, bottom right;
+  background-position-y: top, 85%, bottom;
   background-repeat: no-repeat, no-repeat, no-repeat;
-  height: 300vh; 
-  width: 150vw;
-  /* backgroundRepeat: 'no-repeat',
-        width: '100vw',
-        height: '100vh' */
-  /* backgroundSize: 'cover', */
+  min-height: 300vh;
 }
 
-/* .bg-image{
+.cast-bg-image{
   background-color: #191D29;
   background-image: 
-  url('./assets/images/Star-bg-home.png'),
-  url('./assets/images/Background-home.png'),
-  url('./assets/images/Spiral-bg-home.png');
-  background-size: contain, cover, cover;
-  -webkit-background-size: contain, cover, cover;
-  -moz-background-size: contain, cover, cover;
-  -o-background-size: contain, cover, cover;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  height: 100%; 
-  width: 100%;
-} */
+  url('./assets/images//Characters/Background.png'),
+  url('./assets/images/Characters/Star.png');
+  background-size: 200vh 250vh, contain;
+  background-repeat: no-repeat, no-repeat;
+  background-position: top center, bottom center;
+  background-position-y: top, 90%;
+  min-height: 250vh;
+  /* outline: 3px solid red; */
+}
+
+.nav-padding{
+  padding-top: 260px;
+}
+
+.nav-bar{
+  position: absolute;
+  left: 40%;
+}
+
+.btn-prev{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: transparent;
+  border: 3px solid grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+

@@ -41,7 +41,7 @@ function Locations() {
   // console.log("episode konta?", apiData);
 
   return (
-    <div className="App">
+    <div className="App nav-padding cast-bg-image">
       <div
         className="container"
         // style={{ border: "2px solid orange" }}

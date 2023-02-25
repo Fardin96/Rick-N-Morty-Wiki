@@ -34,7 +34,7 @@ function HeaderText() {
       width: Size.gun_width,
       position: "absolute",
       top: 50,
-      right: -120,
+      right: -90,
     },
     text: {
       fontSize: Size.h1,

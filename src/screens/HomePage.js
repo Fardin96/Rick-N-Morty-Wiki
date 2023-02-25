@@ -16,12 +16,18 @@ function HomePage() {
 
   return (
     <div
-    // className="home-bg-image"
-    // style={{
-    //   border: "1px solid black",
-    // }}
+      className="home-bg-image min-height"
+      // style={{
+      //   border: "1px solid black",
+      // }}
     >
-      <HeaderText />
+      <div className="nav-padding">
+        <HeaderText />
+        <HeaderText />
+        <HeaderText />
+        <HeaderText />
+        <HeaderText />
+      </div>
       <div
         className="travels-medium text-white d-flex my-5 justify-content-center"
         // style={{ border: "3px solid red" }}
@@ -38,14 +44,7 @@ function HomePage() {
           Meet The Cast
         </div>
         <button
-          className="mx-5"
-          style={
-            {
-              // position: "absolute",
-              // bottom: 40,
-              // right: 80,
-            }
-          }
+          // className="mx-5"
           className="btn nav-btn"
           onClick={() => {
             navigate("/characters");

@@ -19,8 +19,11 @@ function Pagination({ setPage, page, totalPages }) {
       className="container d-flex justify-content-center align-items-center my-5 travels-demi-bold text-white"
     >
       Page
-      <button onClick={prevHandler} className="btn nav-btn mx-3">
+      {/* <button onClick={prevHandler} className="btn nav-btn mx-3">
         Previous
+      </button> */}
+      <button onClick={prevHandler} className="btn-prev">
+        P
       </button>
       {page}
       <button onClick={nextHandler} className="btn nav-btn mx-3">
