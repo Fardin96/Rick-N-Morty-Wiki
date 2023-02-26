@@ -109,17 +109,36 @@
   font-family: "ThinItalic";
 }
 
-.home-bg-image{
-  background-image: 
-  url('./assets/images/Background-home.png'),
-  url('./assets/images/Star-bg-home.png'),
-  url('./assets/images/Spiral-bg-home.png');
+.home-bg-image {
+  background-image: url("./assets/images/Background-home.png"),
+    url("./assets/images/Star-bg-home.png"),
+    url("./assets/images/Spiral-bg-home.png");
   background-size: cover, cover, cover;
   background-repeat: no-repeat, no-repeat, repeat;
   width: 150vw, 150vw, 1vw;
-  height: 150vh;
+  min-height: 100vh;
+  /* background-color: black; */
   /* backgroundRepeat: 'no-repeat',
         width: '100vw',
         height: '100vh' */
   /* backgroundSize: 'cover', */
+}
+
+.border-gradient {
+  border: 5px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(45deg, red, blue);
+  border-right: 50px solid green;
+  border-bottom: 50px solid yellow;
+}
+
+/* .border-gradient::before {
+  border-left: 29px solid;
+}
+
+.border-gradient::after {
+  border-left: 29px solid;
+} */
+
+.border-gradient-color {
 }

@@ -11,9 +11,9 @@ function Card({ apiData }) {
 
   const res = results?.map((item) => (
     <div
-      className="col-2 my-3 mx-3"
+      className="col-2 my-3 mx-3 border-gradient border-gradient-color"
       key={item.id}
-      style={{ border: "1px solid red" }}
+      // style={{ border: "1px solid red" }}
     >
       <img className="img-fluid" src={item.image} alt="characters" />
       <div
