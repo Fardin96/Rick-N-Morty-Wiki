@@ -275,20 +275,29 @@ p {
 .scroll-button-left {
   /* right: 0; */
   /* top: 120px; */
+  display: flex;
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  align-items: center;
+  justify-content: center ;
   background-color: white;
   /* border: 3px solid white; */
 }
 
 .scroll-button-right {
   /* top: 120px; */
+  display: flex;
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  align-items: center;
+  justify-content: center ;
   background-color: white;
     /* border: 3px solid white; */
+}
+
+.scroll-icon{
 }
 
 .scroll-view-card > img {

@@ -12,6 +12,8 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaAngleLeft } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 
 import "../App.css";
 import Size from "../assets/constants/Size";
@@ -78,7 +80,9 @@ function HomePage() {
         </button>
       </div>
       <div className="home-characters">
-        <button className="scroll-button-right" onClick={scrollRight}></button>
+        <button className="scroll-button-right" onClick={scrollRight}>
+          <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
+        </button>
         <div className="scroll scroll-view snaps-inline">
           {apiData.map((i, idx) => (
             <div
@@ -90,7 +94,9 @@ function HomePage() {
             </div>
           ))}
         </div>
-        <button className="scroll-button-left" onClick={scrollLeft}></button>
+        <button className="scroll-button-left" onClick={scrollLeft}>
+          <FaAngleRight className="scroll-icon" size={25} color="#9dfe00" />
+        </button>
       </div>
     </div>
   );
