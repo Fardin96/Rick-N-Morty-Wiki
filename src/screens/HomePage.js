@@ -17,6 +17,9 @@ import "../App.css";
 import Size from "../assets/constants/Size";
 import HeaderText from "../components/HeaderText";
 
+const description =
+  "Brilliant but boozy scientist Rick hijacks his fretful \n teenage grandson, Morty, for wild escapades \n in other worlds and alternate dimensions.";
+
 function HomePage() {
   const navigate = useNavigate();
   const [apiData, setApiData] = useState([]);
@@ -40,10 +43,8 @@ function HomePage() {
     right.scrollBy(-300, 0);
   };
 
-  // console.log("ki ki pawa gelo?", apiData);
-
   return (
-    <div className="home-bg-image min-height">
+    <div className="home-root home-bg-image">
       <div className="nav-padding">
         <HeaderText />
         <HeaderText />
@@ -51,39 +52,23 @@ function HomePage() {
         <HeaderText />
         <HeaderText />
       </div>
-      <div className="">
-        <button className="scroll-button" onClick={scrollRight}></button>
-        <button className="scroll-button" onClick={scrollLeft}></button>
+      <div className="description-container">
+        <div className="watch-now text-white travels-bold">Watch Now</div>
+        <div className="description text-blue travels-demi-bold">
+          {description.split("\n").map((i, idx) => (
+            <p key={idx}>{i}</p>
+          ))}
+        </div>
       </div>
-      <div className="scroll scroll-view snaps-inline">
-        {apiData.map((i, idx) => (
-          <div key={idx} className="scroll-view-card text-white">
-            <img
-              src={`${i.image}`}
-              alt="character-image"
-              // className="scroll-img"
-            />
-            {i.name}
-          </div>
-        ))}
-      </div>
-      <div
-        className="travels-medium text-white d-flex my-5 justify-content-center"
-        // style={{ border: "3px solid red" }}
-      >
+      <div className="travels-medium text-white cast-btn-container">
         <div
-          className="mx-5"
           style={{
             fontSize: Size.large,
-            // position: "absolute",
-            // bottom: 40,
-            // right: 200,
           }}
         >
           Meet The Cast
         </div>
         <button
-          // className="mx-5"
           className="btn nav-btn"
           onClick={() => {
             navigate("/characters");
@@ -91,6 +76,21 @@ function HomePage() {
         >
           View all
         </button>
+      </div>
+      <div className="home-characters">
+        <button className="scroll-button-right" onClick={scrollRight}></button>
+        <div className="scroll scroll-view snaps-inline">
+          {apiData.map((i, idx) => (
+            <div
+              key={idx}
+              className="scroll-view-card text-white border-gradient"
+            >
+              <img src={`${i.image}`} alt="character-image" />
+              {i.name}
+            </div>
+          ))}
+        </div>
+        <button className="scroll-button-left" onClick={scrollLeft}></button>
       </div>
     </div>
   );

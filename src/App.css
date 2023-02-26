@@ -109,49 +109,102 @@
   font-family: "ThinItalic";
 }
 
-.text-white{
-  color: white
+.text-blue {
+  color: #14d9e5;
 }
 
-.text-blue{
-  color: #14D9E5;
+p {
+  margin: 0;
 }
 
-.text-gradient{
-  background: linear-gradient(to right, #9DFE00 0%, #14D9E5 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+.text-gradient {
+  background: linear-gradient(90deg, #9dfe00 0%, #14d9e5 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-
-.nav-btn:hover{
-  color:  #9DFE00;
-  border-color: #9DFE00;  
-}
-
-.nav-btn{
+.text-white {
   color: white;
-  border-color: #9DFE00;
+  -webkit-text-fill-color: white;
 }
 
-.home-bg-image{
-  background-color: #191D29;
-  background-image: 
-  url('./assets/images/Background-home.png'),
-  url('./assets/images/Star-bg-home.png'),
-  url('./assets/images/Spiral-bg-home.png');
-  background-size: contain, 95% 10%, auto;
+.nav-btn:hover {
+  color: #9dfe00;
+  border-color: #9dfe00;
+}
+
+.nav-btn {
+  color: white;
+  border-color: #9dfe00;
+}
+
+.home-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-bg-image {
+  background-color: #191d29;
+  background-image: url("./assets/images/Background-home.png"),
+    url("./assets/images/Star-bg-home.png"),
+    url("./assets/images/Spiral-bg-home.png");
+  background-size: contain, 95% 7%, auto;
   background-position: top center, bottom center, bottom right;
   background-position-y: top, 85%, bottom;
   background-repeat: no-repeat, no-repeat, no-repeat;
   min-height: 350vh;
 }
 
-.cast-bg-image{
-  background-color: #191D29;
-  background-image: 
-  url('./assets/images//Characters/Background.png'),
-  url('./assets/images/Characters/Star.png');
+.home-characters {
+  display: flex;
+  align-items: center;
+  max-width: 90%;
+  margin-top: 1%;
+  /* flex-direction: ; */
+}
+
+.description-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* border: 1px solid green; */
+}
+
+.description {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid blue;   */
+}
+
+.watch-now {
+  height: 58px;
+  width: 210px;
+  border-radius: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 65px;
+  font-size: 20px;
+  background: linear-gradient(90deg, #9dfe00 0%, #14d9e5 90%);
+  /* background-color: #fff; */
+}
+
+.cast-btn-container {
+  min-width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 100px;
+  /* border: 1px solid red; */
+}
+
+.cast-bg-image {
+  background-color: #191d29;
+  background-image: url("./assets/images//Characters/Background.png"),
+    url("./assets/images/Characters/Star.png");
   background-size: 200vh 250vh, contain;
   background-repeat: no-repeat, no-repeat;
   background-position: top center, bottom center;
@@ -160,16 +213,16 @@
   /* outline: 3px solid red; */
 }
 
-.nav-padding{
+.nav-padding {
   padding-top: 260px;
 }
 
-.nav-bar{
+.nav-bar {
   position: absolute;
   left: 40%;
 }
 
-.btn-prev{
+.btn-prev {
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -182,46 +235,68 @@
   margin-right: 20px;
 }
 
-.scroll-view{
-  transform: translateX(5%);
+.scroll-view {
+  max-width: 90%;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 21%;
   width: 90%;
   gap: 30px;
   scroll-behavior: smooth;
+
   overflow-x: auto;
   overscroll-behavior-inline: contain;
-  border: 3px solid red;
+  /* border: 3px solid red; */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.scroll-view::-webkit-scrollbar{
+.scroll-view::-webkit-scrollbar {
   -webkit-appearance: none;
+  display: none;
 }
 
-.scroll-view-card{
+.scroll-view-card {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 20px;
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
 }
 
-.snaps-inline{
+.snaps-inline {
   scroll-snap-type: inline mandatory;
 }
 
-.snaps-inline > *{
-  scroll-snap-align: start; 
+.snaps-inline > * {
+  scroll-snap-align: start;
 }
 
-.scroll-button{
-  height: 100px;
-  width: 100px;
+.scroll-button-left {
+  /* right: 0; */
+  /* top: 120px; */
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
+  /* border: 3px solid white; */
 }
 
-.scroll-view-card > img{
+.scroll-button-right {
+  /* top: 120px; */
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
+    /* border: 3px solid white; */
+}
+
+.scroll-view-card > img {
   /* aspect-ratio: 5/5; */
 }
 
-
+.border-gradient {
+  border: 0.9px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(#9dfe00, #14d9e5);
+}
