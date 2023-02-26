@@ -113,6 +113,10 @@
   color: #14d9e5;
 }
 
+p {
+  margin: 0;
+}
+
 .text-gradient {
   background: linear-gradient(25deg, #9dfe00 0%, #14d9e5 90%);
   background-clip: text;
@@ -145,6 +149,33 @@
   background-position-y: top, 85%, bottom;
   background-repeat: no-repeat, no-repeat, no-repeat;
   min-height: 350vh;
+}
+
+.description-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid green;
+}
+
+.description {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid blue;   */
+}
+
+.watch-now {
+  height: 58px;
+  width: 210px;
+  border-radius: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 65px;
+  font-size: 20px;
+  background: linear-gradient(25deg, #9dfe00 0%, #14d9e5 90%);
+  /* background-color: #fff; */
 }
 
 .cast-btn-container {

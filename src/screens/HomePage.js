@@ -17,6 +17,9 @@ import "../App.css";
 import Size from "../assets/constants/Size";
 import HeaderText from "../components/HeaderText";
 
+const description =
+  "Brilliant but boozy scientist Rick hijacks his fretful \n teenage grandson, Morty, for wild escapades \n in other worlds and alternate dimensions.";
+
 function HomePage() {
   const navigate = useNavigate();
   const [apiData, setApiData] = useState([]);
@@ -43,13 +46,21 @@ function HomePage() {
   // console.log("ki ki pawa gelo?", apiData);
 
   return (
-    <div className="home-bg-image min-height ">
+    <div className="home-bg-image">
       <div className="nav-padding">
         <HeaderText />
         <HeaderText />
         <HeaderText />
         <HeaderText />
         <HeaderText />
+      </div>
+      <div className="description-container">
+        <div className="watch-now text-white travels-bold">Watch Now</div>
+        <div className="description text-blue travels-demi-bold">
+          {description.split("\n").map((i, idx) => (
+            <p key={idx}>{i}</p>
+          ))}
+        </div>
       </div>
       <div
         className="travels-medium text-white cast-btn-container"
@@ -58,10 +69,6 @@ function HomePage() {
         <div
           style={{
             fontSize: Size.large,
-            // border: "2px solid green",
-            // position: "absolute",
-            // bottom: 40,
-            // right: 200,
           }}
         >
           Meet The Cast
