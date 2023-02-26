@@ -139,6 +139,12 @@ p {
   border-color: #9dfe00;
 }
 
+.home-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .home-bg-image {
   background-color: #191d29;
   background-image: url("./assets/images/Background-home.png"),
@@ -151,11 +157,19 @@ p {
   min-height: 350vh;
 }
 
+.home-characters {
+  display: flex;
+  align-items: center;
+  max-width: 90%;
+  margin-top: 1%;
+  /* flex-direction: ; */
+}
+
 .description-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 .description {
@@ -179,6 +193,7 @@ p {
 }
 
 .cast-btn-container {
+  min-width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -221,6 +236,7 @@ p {
 }
 
 .scroll-view {
+  max-width: 90%;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 21%;
@@ -229,11 +245,14 @@ p {
 
   overflow-x: auto;
   overscroll-behavior-inline: contain;
-  border: 3px solid red;
+  /* border: 3px solid red; */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .scroll-view::-webkit-scrollbar {
   -webkit-appearance: none;
+  display: none;
 }
 
 .scroll-view-card {
@@ -241,7 +260,7 @@ p {
   flex-direction: column;
   gap: 10px;
   padding: 20px;
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
 }
 
 .snaps-inline {
@@ -252,9 +271,19 @@ p {
   scroll-snap-align: start;
 }
 
-.scroll-button {
+.scroll-button-left {
+  right: 0;
+  top: 120px;
   height: 100px;
   width: 100px;
+  background-color: blue;
+}
+
+.scroll-button-right {
+  top: 120px;
+  height: 100px;
+  width: 100px;
+  background-color: red;
 }
 
 .scroll-view-card > img {

@@ -43,10 +43,8 @@ function HomePage() {
     right.scrollBy(-300, 0);
   };
 
-  // console.log("ki ki pawa gelo?", apiData);
-
   return (
-    <div className="home-bg-image">
+    <div className="home-root home-bg-image">
       <div className="nav-padding">
         <HeaderText />
         <HeaderText />
@@ -62,10 +60,7 @@ function HomePage() {
           ))}
         </div>
       </div>
-      <div
-        className="travels-medium text-white cast-btn-container"
-        // style={{ border: "3px solid red" }}
-      >
+      <div className="travels-medium text-white cast-btn-container">
         <div
           style={{
             fontSize: Size.large,
@@ -74,7 +69,6 @@ function HomePage() {
           Meet The Cast
         </div>
         <button
-          // className="mx-5"
           className="btn nav-btn"
           onClick={() => {
             navigate("/characters");
@@ -83,24 +77,20 @@ function HomePage() {
           View all
         </button>
       </div>
-      <div className="">
-        <button className="scroll-button" onClick={scrollRight}></button>
-        <button className="scroll-button" onClick={scrollLeft}></button>
-      </div>
-      <div className="scroll scroll-view snaps-inline">
-        {apiData.map((i, idx) => (
-          <div
-            key={idx}
-            className="scroll-view-card text-white border-gradient"
-          >
-            <img
-              src={`${i.image}`}
-              alt="character-image"
-              // className="scroll-img"
-            />
-            {i.name}
-          </div>
-        ))}
+      <div className="home-characters">
+        <button className="scroll-button-right" onClick={scrollRight}></button>
+        <div className="scroll scroll-view snaps-inline">
+          {apiData.map((i, idx) => (
+            <div
+              key={idx}
+              className="scroll-view-card text-white border-gradient"
+            >
+              <img src={`${i.image}`} alt="character-image" />
+              {i.name}
+            </div>
+          ))}
+        </div>
+        <button className="scroll-button-left" onClick={scrollLeft}></button>
       </div>
     </div>
   );
