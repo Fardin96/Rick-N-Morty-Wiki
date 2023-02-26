@@ -183,12 +183,13 @@
 }
 
 .scroll-view{
+  transform: translateX(5%);
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 21%;
+  width: 90%;
   gap: 30px;
   scroll-behavior: smooth;
-  
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   border: 3px solid red;
