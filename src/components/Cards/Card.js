@@ -13,7 +13,7 @@ function Card({ apiData }) {
     <div
       className="col-2 my-3 mx-3 border-gradient border-gradient-color"
       key={item.id}
-      style={{ border: "1px solid white" }}
+      // style={{ border: "1px solid white" }}
     >
       <img className="img-fluid" src={item.image} alt="characters" />
       <div

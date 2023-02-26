@@ -43,7 +43,7 @@ function HomePage() {
   // console.log("ki ki pawa gelo?", apiData);
 
   return (
-    <div className="home-bg-image min-height">
+    <div className="home-bg-image min-height ">
       <div className="nav-padding">
         <HeaderText />
         <HeaderText />
@@ -51,30 +51,14 @@ function HomePage() {
         <HeaderText />
         <HeaderText />
       </div>
-      <div className="">
-        <button className="scroll-button" onClick={scrollRight}></button>
-        <button className="scroll-button" onClick={scrollLeft}></button>
-      </div>
-      <div className="scroll scroll-view snaps-inline">
-        {apiData.map((i, idx) => (
-          <div key={idx} className="scroll-view-card text-white">
-            <img
-              src={`${i.image}`}
-              alt="character-image"
-              // className="scroll-img"
-            />
-            {i.name}
-          </div>
-        ))}
-      </div>
       <div
-        className="travels-medium text-white d-flex my-5 justify-content-center"
+        className="travels-medium text-white cast-btn-container"
         // style={{ border: "3px solid red" }}
       >
         <div
-          className="mx-5"
           style={{
             fontSize: Size.large,
+            // border: "2px solid green",
             // position: "absolute",
             // bottom: 40,
             // right: 200,
@@ -91,6 +75,25 @@ function HomePage() {
         >
           View all
         </button>
+      </div>
+      <div className="">
+        <button className="scroll-button" onClick={scrollRight}></button>
+        <button className="scroll-button" onClick={scrollLeft}></button>
+      </div>
+      <div className="scroll scroll-view snaps-inline">
+        {apiData.map((i, idx) => (
+          <div
+            key={idx}
+            className="scroll-view-card text-white border-gradient"
+          >
+            <img
+              src={`${i.image}`}
+              alt="character-image"
+              // className="scroll-img"
+            />
+            {i.name}
+          </div>
+        ))}
       </div>
     </div>
   );

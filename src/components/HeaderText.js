@@ -38,32 +38,35 @@ function HeaderText() {
     },
     text: {
       fontSize: Size.h1,
+      // color: "white",
     },
   };
 
   return (
     <div className="container" style={{ position: "relative" }}>
       <div
-        className="row d-flex flex-row"
+        className="row d-flex flex-row text-gradient"
         // style={{ border: "1px solid blue" }}
       >
-        <div className="d-flex flex-row ">
+        <div className="d-flex flex-row">
           <img style={styles.bubble} src={BUBBLE} alt="BUBBLE-LOGO" />
           <img style={styles.pill} src={PILL} alt="PILL-LOGO" />
+          {/* <h1 style={styles.text} className="travels-bold-italic text-white"> */}
           <h1 style={styles.text} className="travels-bold-italic text-white">
             THE
           </h1>
           <img style={styles.portal} src={PORTAL} alt="PORTAL-LOGO" />
-          <h1 style={styles.text} className="travels-bold text-gradient">
+          <h1 style={styles.text} className="travels-bold ">
             RICK &
           </h1>
         </div>
         <div className="d-flex flex-row ">
-          <h1 style={styles.text} className="travels-bold mx-3 text-gradient">
+          <h1 style={styles.text} className="travels-bold mx-3 ">
             MORTY
           </h1>
           <h1
             style={styles.text}
+            // className="travels-bold-italic mx-3 text-white"
             className="travels-bold-italic mx-3 text-white"
           >
             WIKI

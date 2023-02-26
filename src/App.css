@@ -109,18 +109,20 @@
   font-family: "ThinItalic";
 }
 
-.text-white {
-  color: white;
-}
-
 .text-blue {
   color: #14d9e5;
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #9dfe00 0%, #14d9e5 100%);
+  background: linear-gradient(25deg, #9dfe00 0%, #14d9e5 90%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-white {
+  color: white;
+  -webkit-text-fill-color: white;
 }
 
 .nav-btn:hover {
@@ -138,11 +140,19 @@
   background-image: url("./assets/images/Background-home.png"),
     url("./assets/images/Star-bg-home.png"),
     url("./assets/images/Spiral-bg-home.png");
-  background-size: contain, 95% 10%, auto;
+  background-size: contain, 95% 7%, auto;
   background-position: top center, bottom center, bottom right;
   background-position-y: top, 85%, bottom;
   background-repeat: no-repeat, no-repeat, no-repeat;
   min-height: 350vh;
+}
+
+.cast-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 100px;
+  /* border: 1px solid red; */
 }
 
 .cast-bg-image {
@@ -218,4 +228,10 @@
 
 .scroll-view-card > img {
   /* aspect-ratio: 5/5; */
+}
+
+.border-gradient {
+  border: 0.9px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(#9dfe00, #14d9e5);
 }
