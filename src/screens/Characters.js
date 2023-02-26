@@ -24,14 +24,11 @@ function Characters() {
   }, [api]);
 
   return (
-    <div className="App">
-      <div
-        className="container"
-        // style={{ border: "2px solid orange" }}
-      >
+    <div className="App nav-padding cast-bg-image">
+      <div className="container">
         <div className="row">
           <div
-            className="d-flex justify-content-between align-items-center travels-demi-bold"
+            className="d-flex justify-content-between align-items-center travels-demi-bold text-blue"
             style={{
               fontSize: Size.pill_height,
               // border: "2px solid orange"

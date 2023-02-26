@@ -13,11 +13,11 @@ function Card({ apiData }) {
     <div
       className="col-2 my-3 mx-3 border-gradient border-gradient-color"
       key={item.id}
-      // style={{ border: "1px solid red" }}
+      style={{ border: "1px solid white" }}
     >
       <img className="img-fluid" src={item.image} alt="characters" />
       <div
-        className="content my-4 travels-light"
+        className="content my-4 travels-light text-white"
         style={{ fontSize: Size.small }}
       >
         {item.name}

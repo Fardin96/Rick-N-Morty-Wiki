@@ -41,14 +41,14 @@ function Locations() {
   // console.log("episode konta?", apiData);
 
   return (
-    <div className="App">
+    <div className="App nav-padding cast-bg-image">
       <div
         className="container"
         // style={{ border: "2px solid orange" }}
       >
         <div className="row">
           <div
-            className="d-flex flex-column align-items-center justify-content-between "
+            className="d-flex flex-column align-items-center justify-content-between text-white"
             // style={{ border: "1px solid blue" }}
           >
             <div

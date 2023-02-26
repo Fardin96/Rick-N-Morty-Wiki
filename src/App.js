@@ -16,9 +16,12 @@ import Navbar from "./components/NavBar";
 
 function App() {
   return (
-    <div className="home-bg-image">
+    <div
+    // className="home-bg-image"
+    // style={{ border: "3px solid red" }}
+    >
       <Router>
-        <div className="App">
+        <div>
           <Navbar />
         </div>
         <Routes>
