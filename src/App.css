@@ -158,10 +158,12 @@ p {
 }
 
 .home-characters {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   max-width: 90%;
   margin-top: 1%;
+  position: relative;
   /* border: 1px solid #9dfe00; */
   /* flex-direction: ; */
 }
@@ -237,7 +239,7 @@ p {
 }
 
 .scroll-view {
-  position: relative;
+  /* position: relative; */
   /* max-width: 90%; */
   display: grid;
   grid-auto-flow: column;
@@ -245,12 +247,12 @@ p {
   /* width: 90%; */
   gap: 30px;
   scroll-behavior: smooth;
-
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   /* border: 3px solid red; */
   scrollbar-width: none;
   -ms-overflow-style: none;
+  z-index: 0;
 }
 
 .scroll-view::-webkit-scrollbar {
@@ -262,8 +264,39 @@ p {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 20px;
+  padding: 15px;
+  z-index: inherit;
   /* border: 3px solid blue; */
+}
+
+.scroll-button-left,
+.scroll-button-right {
+  /* top: 120px; */
+  /* grid-row: 1; */
+  position: absolute;
+  display: flex;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-width: 3px;
+  border-color: white;
+  z-index: 1;
+  /* transform: translateY(50%); */
+  /* top: 50%; */
+  /* border: 3px solid white; */
+}
+
+.scroll-button-left {
+  right: 0;
+  transform: translatex(50%);
+}
+
+.scroll-button-right {
+  left: 0;
+  transform: translatex(-50%);
 }
 
 .snaps-inline {
@@ -274,48 +307,9 @@ p {
   scroll-snap-align: start;
 }
 
-/* { */
-/* right: 0; */
-/* top: 120px; */
-/* display: flex;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  background-color: white; */
-/* border: 3px solid white; */
-/* } */
-
-.scroll-button-left,
-.scroll-button-right {
-  /* top: 120px; */
-  position: absolute;
-  display: flex;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  z-index: 1;
-  transform: translateY(50%);
-  /* top: 50%; */
-  /* border: 3px solid white; */
-}
-
-.scroll-button-left {
-  right: 0;
-  transform: translateX(-85%);
-}
-
-.scroll-button-right {
-  left: 0;
-  transform: translateX(100%);
-}
-
 .border-gradient {
   border: 0.9px solid;
+  /* border-radius: 5%; */
   border-image-slice: 1;
   border-image-source: linear-gradient(#9dfe00, #14d9e5);
 }

@@ -80,9 +80,9 @@ function HomePage() {
         </button>
       </div>
       <div className="home-characters">
-        <button className="scroll-button-right" onClick={scrollRight}>
+        <div className="scroll-button-right" onClick={scrollRight}>
           <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
-        </button>
+        </div>
         <div className="scroll scroll-view snaps-inline">
           {apiData.map((i, idx) => (
             <div
@@ -94,9 +94,9 @@ function HomePage() {
             </div>
           ))}
         </div>
-        <button className="scroll-button-left" onClick={scrollLeft}>
+        <div className="scroll-button-left" onClick={scrollLeft}>
           <FaAngleRight className="scroll-icon" size={25} color="#9dfe00" />
-        </button>
+        </div>
       </div>
     </div>
   );
