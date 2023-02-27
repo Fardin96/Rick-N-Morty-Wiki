@@ -162,6 +162,7 @@ p {
   align-items: center;
   max-width: 90%;
   margin-top: 1%;
+  /* border: 1px solid #9dfe00; */
   /* flex-direction: ; */
 }
 
@@ -236,11 +237,12 @@ p {
 }
 
 .scroll-view {
-  max-width: 90%;
+  position: relative;
+  /* max-width: 90%; */
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 21%;
-  width: 90%;
+  /* width: 90%; */
   gap: 30px;
   scroll-behavior: smooth;
 
@@ -272,36 +274,44 @@ p {
   scroll-snap-align: start;
 }
 
-.scroll-button-left {
-  /* right: 0; */
+/* { */
+/* right: 0; */
+/* top: 120px; */
+/* display: flex;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: white; */
+/* border: 3px solid white; */
+/* } */
+
+.scroll-button-left,
+.scroll-button-right {
   /* top: 120px; */
+  position: absolute;
   display: flex;
   height: 50px;
   width: 50px;
   border-radius: 50%;
   align-items: center;
-  justify-content: center ;
+  justify-content: center;
   background-color: white;
+  z-index: 1;
+  transform: translateY(50%);
+  /* top: 50%; */
   /* border: 3px solid white; */
 }
 
+.scroll-button-left {
+  right: 0;
+  transform: translateX(-85%);
+}
+
 .scroll-button-right {
-  /* top: 120px; */
-  display: flex;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center ;
-  background-color: white;
-    /* border: 3px solid white; */
-}
-
-.scroll-icon{
-}
-
-.scroll-view-card > img {
-  /* aspect-ratio: 5/5; */
+  left: 0;
+  transform: translateX(100%);
 }
 
 .border-gradient {
