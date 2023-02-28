@@ -49,14 +49,14 @@ function HomePage() {
     const slider = document.querySelector(".scroll-view");
     let isDown = false;
     let startX;
-    let scrollLeft;
+    let scrollL;
 
     slider.addEventListener("mousedown", (e) => {
       isDown = true;
       // startX = e.pageX - e.offsetX;
       startX = e.pageX;
-      scrollLeft = slider.scrollLeft;
-      console.log(scrollLeft);
+      scrollL = slider.scrollLeft;
+      console.log(scrollL);
     });
     slider.addEventListener("mouseup", () => {
       isDown = false;
@@ -71,8 +71,8 @@ function HomePage() {
       // let X = e.pageX - e.offsetX;
       const X = e.pageX;
       const walk = X - startX;
-      let scroll = walk - scrollLeft;
-      slider.scrollBy(-scroll, 0);
+      let scroll = walk - scrollL;
+      // slider.scrollBy(-scroll, 0);
       // console.log("walking", walk);
       // console.log(e);
     });
