@@ -43,37 +43,22 @@ function HeaderText() {
   };
 
   return (
-    <div className="container" style={{ position: "relative" }}>
-      <div
-        className="row d-flex flex-row text-gradient"
-        // style={{ border: "1px solid blue" }}
-      >
-        <div className="d-flex flex-row">
-          <img style={styles.bubble} src={BUBBLE} alt="BUBBLE-LOGO" />
-          <img style={styles.pill} src={PILL} alt="PILL-LOGO" />
-          {/* <h1 style={styles.text} className="travels-bold-italic text-white"> */}
-          <h1 style={styles.text} className="travels-bold-italic text-white">
-            THE
-          </h1>
-          <img style={styles.portal} src={PORTAL} alt="PORTAL-LOGO" />
-          <h1 style={styles.text} className="travels-bold ">
-            RICK &
-          </h1>
+    <div className="hdt-root">
+      <div className="text-gradient">
+        <div className="header-one">
+          <img className="bubble" src={BUBBLE} alt="BUBBLE-LOGO" />
+          <img className="pill" src={PILL} alt="PILL-LOGO" />
+          <p className="travels-bold-italic text-white">THE</p>
+          <img className="portal" src={PORTAL} alt="PORTAL-LOGO" />
+          <p className="travels-bold ">RICK &</p>
+          <img className="gun" style={styles.gun} src={GUN} alt="GUN-LOGO" />
         </div>
-        <div className="d-flex flex-row ">
-          <h1 style={styles.text} className="travels-bold mx-3 ">
-            MORTY
-          </h1>
-          <h1
-            style={styles.text}
-            // className="travels-bold-italic mx-3 text-white"
-            className="travels-bold-italic mx-3 text-white"
-          >
-            WIKI
-          </h1>
+
+        <div className="header-two">
+          <p className="travels-bold ">MORTY</p>
+          <p className="travels-bold-italic text-white">WIKI</p>
         </div>
       </div>
-      <img style={styles.gun} src={GUN} alt="GUN-LOGO" />
     </div>
   );
 }

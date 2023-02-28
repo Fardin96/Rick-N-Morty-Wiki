@@ -115,6 +115,7 @@
 
 p {
   margin: 0;
+  padding: 0;
 }
 
 .text-gradient {
@@ -313,5 +314,50 @@ p {
   border: 0.9px solid;
   border-radius: 10px;
   border-image-slice: 1;
-  border-image-source: linear-gradient(#9dfe00, #14d9e5);
+  border-image-source: linear-gradient(#14d9e5, #9dfe00);
+}
+
+.hdt-root {
+  font-size: 128px;
+}
+
+.header-one,
+.header-two {
+  display: grid;
+  grid-auto-flow: column;
+  position: relative;
+  border: 1px solid blue;
+}
+
+.portal {
+  height: fit-content;
+  width: fit-content;
+}
+
+.header-one .bubble {
+  height: min-content;
+  width: min-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-33%) translateX(-55%);
+  opacity: 0.9;
+}
+
+.header-one .pill {
+  height: min-content;
+  width: min-content;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(250%);
+}
+
+.header-one .gun {
+  height: min-content;
+  width: min-content;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(25%) translateX(50%);
 }

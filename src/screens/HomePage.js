@@ -38,29 +38,16 @@ function HomePage() {
     })();
   }, [api]);
 
-  const whereisTheScroll = ({ scrollL }) => {
-    if (scrollL === 0) {
-      setLeftVisible((prev) => !prev);
-    }
-    if (scrollL === 1105) {
-      setRightVisible((prev) => !prev);
-    }
-    if (scrollL > 0) {
-      setLeftVisible(true);
-    }
-    if (scrollL < 1105) {
-      setRightVisible(true);
-    }
-  };
-
   const scrollLeft = () => {
     const left = document.querySelector(".scroll-view");
     // whereisTheScroll(left.scrollLeft);
+    left.scrollBy(300, 0);
+
     const scrollL = left.scrollLeft;
     if (scrollL === 0) {
       setLeftVisible((prev) => !prev);
     }
-    if (scrollL === 1105) {
+    if (scrollL >= 1105) {
       setRightVisible((prev) => !prev);
     }
     if (scrollL > 0) {
@@ -69,17 +56,18 @@ function HomePage() {
     if (scrollL < 1105) {
       setRightVisible(true);
     }
-    left.scrollBy(300, 0);
   };
 
   const scrollRight = () => {
     const right = document.querySelector(".scroll-view");
     // whereisTheScroll(right.scrollLeft);
+    right.scrollBy(-300, 0);
+
     const scrollL = right.scrollLeft;
     if (scrollL === 0) {
       setLeftVisible((prev) => !prev);
     }
-    if (scrollL === 1105) {
+    if (scrollL >= 1105) {
       setRightVisible((prev) => !prev);
     }
     if (scrollL > 0) {
@@ -88,7 +76,6 @@ function HomePage() {
     if (scrollL < 1105) {
       setRightVisible(true);
     }
-    right.scrollBy(-300, 0);
   };
 
   const clickNdrag = () => {
@@ -102,20 +89,8 @@ function HomePage() {
       e.preventDefault();
       startX = e.pageX - slider.offsetLeft;
       scrollL = slider.scrollLeft;
-      console.log(scrollL);
+      // console.log(scrollL);
       // whereisTheScroll(scrollL);
-      if (scrollL === 0) {
-        setLeftVisible((prev) => !prev);
-      }
-      if (scrollL === 1105) {
-        setRightVisible((prev) => !prev);
-      }
-      if (scrollL > 0) {
-        setLeftVisible(true);
-      }
-      if (scrollL < 1105) {
-        setRightVisible(true);
-      }
     });
     slider.addEventListener("mouseup", () => {
       isDown = false;
@@ -129,6 +104,18 @@ function HomePage() {
       const X = e.pageX - slider.offsetLeft;
       const walk = X - startX;
       slider.scrollLeft = scrollL - walk;
+      if (scrollL === 0) {
+        setLeftVisible((prev) => !prev);
+      }
+      if (scrollL >= 1105) {
+        setRightVisible((prev) => !prev);
+      }
+      if (scrollL > 0) {
+        setLeftVisible(true);
+      }
+      if (scrollL < 1105) {
+        setRightVisible(true);
+      }
     });
   };
 
@@ -136,11 +123,12 @@ function HomePage() {
     <div className="home-root home-bg-image">
       <div className="nav-padding">
         <HeaderText />
+        {/* <HeaderText />
         <HeaderText />
         <HeaderText />
-        <HeaderText />
-        <HeaderText />
+        <HeaderText /> */}
       </div>
+
       <div className="description-container">
         <div className="watch-now text-white travels-bold">Watch Now</div>
         <div className="description text-blue travels-demi-bold">
@@ -149,6 +137,7 @@ function HomePage() {
           ))}
         </div>
       </div>
+
       <div className="travels-medium text-white cast-btn-container">
         <div
           style={{
@@ -166,6 +155,7 @@ function HomePage() {
           View all
         </button>
       </div>
+
       <div className="home-characters">
         {leftVisible === true ? (
           <div className="scroll-button-right" onClick={scrollRight}>
