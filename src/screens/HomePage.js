@@ -53,10 +53,9 @@ function HomePage() {
 
     slider.addEventListener("mousedown", (e) => {
       isDown = true;
-      // startX = e.pageX - e.offsetX;
-      startX = e.pageX;
+      startX = e.pageX - slider.offsetLeft;
       scrollL = slider.scrollLeft;
-      console.log(scrollL);
+      // console.log(scrollL);
     });
     slider.addEventListener("mouseup", () => {
       isDown = false;
@@ -65,16 +64,11 @@ function HomePage() {
       isDown = false;
     });
     slider.addEventListener("mousemove", (e) => {
-      //  = true;
       if (!isDown) return;
       e.preventDefault();
-      // let X = e.pageX - e.offsetX;
-      const X = e.pageX;
+      const X = e.pageX - slider.offsetLeft;
       const walk = X - startX;
-      let scroll = walk - scrollL;
-      // slider.scrollBy(-scroll, 0);
-      // console.log("walking", walk);
-      // console.log(e);
+      slider.scrollLeft = scrollL - walk;
     });
   };
 
