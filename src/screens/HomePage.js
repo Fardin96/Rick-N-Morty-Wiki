@@ -53,9 +53,9 @@ function HomePage() {
 
     slider.addEventListener("mousedown", (e) => {
       isDown = true;
+      e.preventDefault();
       startX = e.pageX - slider.offsetLeft;
       scrollL = slider.scrollLeft;
-      // console.log(scrollL);
     });
     slider.addEventListener("mouseup", () => {
       isDown = false;

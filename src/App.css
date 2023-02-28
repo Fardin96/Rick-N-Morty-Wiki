@@ -253,7 +253,7 @@ p {
   scrollbar-width: none;
   -ms-overflow-style: none;
   z-index: 0;
-  border: 3px solid red;
+  /* border: 3px solid red; */
 }
 
 .scroll-view::-webkit-scrollbar {
