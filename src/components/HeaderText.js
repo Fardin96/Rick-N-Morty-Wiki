@@ -43,23 +43,22 @@ function HeaderText() {
   };
 
   return (
-    <div className="hbt-root">
+    <div className="hdt-root">
       <div className="text-gradient">
         <div className="header-one">
-          {/* <img src={BUBBLE} alt="BUBBLE-LOGO" /> */}
-          {/* <img src={PILL} alt="PILL-LOGO" /> */}
-          {/* <h1  className="travels-bold-italic text-white"> */}
+          <img className="bubble" src={BUBBLE} alt="BUBBLE-LOGO" />
+          <img className="pill" src={PILL} alt="PILL-LOGO" />
           <p className="travels-bold-italic text-white">THE</p>
-          {/* <img src={PORTAL} alt="PORTAL-LOGO" /> */}
+          <img className="portal" src={PORTAL} alt="PORTAL-LOGO" />
           <p className="travels-bold ">RICK &</p>
+          <img className="gun" style={styles.gun} src={GUN} alt="GUN-LOGO" />
         </div>
 
-        <div className="header-one">
-          <p className="travels-bold">MORTY</p>
+        <div className="header-two">
+          <p className="travels-bold ">MORTY</p>
           <p className="travels-bold-italic text-white">WIKI</p>
         </div>
       </div>
-      {/* <img src={GUN} alt="GUN-LOGO" /> */}
     </div>
   );
 }

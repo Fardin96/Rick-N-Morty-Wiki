@@ -19,6 +19,8 @@ import "../App.css";
 import Size from "../assets/constants/Size";
 import HeaderText from "../components/HeaderText";
 
+import { BsPlayCircle } from "react-icons/bs";
+
 const description =
   "Brilliant but boozy scientist Rick hijacks his fretful \n teenage grandson, Morty, for wild escapades \n in other worlds and alternate dimensions.";
 
@@ -38,29 +40,16 @@ function HomePage() {
     })();
   }, [api]);
 
-  const whereisTheScroll = ({ scrollL }) => {
-    if (scrollL === 0) {
-      setLeftVisible((prev) => !prev);
-    }
-    if (scrollL === 1105) {
-      setRightVisible((prev) => !prev);
-    }
-    if (scrollL > 0) {
-      setLeftVisible(true);
-    }
-    if (scrollL < 1105) {
-      setRightVisible(true);
-    }
-  };
-
   const scrollLeft = () => {
     const left = document.querySelector(".scroll-view");
     // whereisTheScroll(left.scrollLeft);
+    left.scrollBy(300, 0);
+
     const scrollL = left.scrollLeft;
     if (scrollL === 0) {
       setLeftVisible((prev) => !prev);
     }
-    if (scrollL === 1105) {
+    if (scrollL >= 1105) {
       setRightVisible((prev) => !prev);
     }
     if (scrollL > 0) {
@@ -69,17 +58,18 @@ function HomePage() {
     if (scrollL < 1105) {
       setRightVisible(true);
     }
-    left.scrollBy(300, 0);
   };
 
   const scrollRight = () => {
     const right = document.querySelector(".scroll-view");
     // whereisTheScroll(right.scrollLeft);
+    right.scrollBy(-300, 0);
+
     const scrollL = right.scrollLeft;
     if (scrollL === 0) {
       setLeftVisible((prev) => !prev);
     }
-    if (scrollL === 1105) {
+    if (scrollL >= 1105) {
       setRightVisible((prev) => !prev);
     }
     if (scrollL > 0) {
@@ -88,7 +78,6 @@ function HomePage() {
     if (scrollL < 1105) {
       setRightVisible(true);
     }
-    right.scrollBy(-300, 0);
   };
 
   const clickNdrag = () => {
@@ -102,20 +91,8 @@ function HomePage() {
       e.preventDefault();
       startX = e.pageX - slider.offsetLeft;
       scrollL = slider.scrollLeft;
-      console.log(scrollL);
+      // console.log(scrollL);
       // whereisTheScroll(scrollL);
-      if (scrollL === 0) {
-        setLeftVisible((prev) => !prev);
-      }
-      if (scrollL === 1105) {
-        setRightVisible((prev) => !prev);
-      }
-      if (scrollL > 0) {
-        setLeftVisible(true);
-      }
-      if (scrollL < 1105) {
-        setRightVisible(true);
-      }
     });
     slider.addEventListener("mouseup", () => {
       isDown = false;
@@ -129,6 +106,18 @@ function HomePage() {
       const X = e.pageX - slider.offsetLeft;
       const walk = X - startX;
       slider.scrollLeft = scrollL - walk;
+      if (scrollL === 0) {
+        setLeftVisible((prev) => !prev);
+      }
+      if (scrollL >= 1105) {
+        setRightVisible((prev) => !prev);
+      }
+      if (scrollL > 0) {
+        setLeftVisible(true);
+      }
+      if (scrollL < 1105) {
+        setRightVisible(true);
+      }
     });
   };
 
@@ -141,24 +130,30 @@ function HomePage() {
         <HeaderText />
         <HeaderText /> */}
       </div>
+
       <div className="description-container">
-        <div className="watch-now text-white travels-bold">Watch Now</div>
+        <div className="watch-now text-white travels-bold">
+          <BsPlayCircle size={25} />
+          Watch Now
+        </div>
         <div className="description text-blue travels-demi-bold">
           {description.split("\n").map((i, idx) => (
             <p key={idx}>{i}</p>
           ))}
         </div>
       </div>
-      <div className="travels-medium text-white cast-btn-container">
+
+      <div className="travels-medium cast-btn-container">
         <div
           style={{
             fontSize: Size.large,
           }}
+          className="text-white"
         >
           Meet The Cast
         </div>
         <button
-          className="btn nav-btn"
+          className="button"
           onClick={() => {
             navigate("/characters");
           }}
@@ -166,6 +161,7 @@ function HomePage() {
           View all
         </button>
       </div>
+
       <div className="home-characters">
         {leftVisible === true ? (
           <div className="scroll-button-right" onClick={scrollRight}>
@@ -179,7 +175,77 @@ function HomePage() {
               className="scroll-view-card text-white border-gradient"
             >
               <img src={`${i.image}`} alt="character-image" />
-              {i.name}
+              <p className="cast-name poppins-medium">{i.name}</p>
+            </div>
+          ))}
+        </div>
+        {rightVisible === true ? (
+          <div className="scroll-button-left" onClick={scrollLeft}>
+            <FaAngleRight className="scroll-icon" size={25} color="#9dfe00" />
+          </div>
+        ) : null}
+      </div>
+
+      <div className="travels-medium cast-btn-container">
+        <div
+          style={{
+            fontSize: Size.large,
+          }}
+          className="text-white"
+        >
+          Episodes
+        </div>
+      </div>
+
+      <div className="home-episodes">
+        {leftVisible === true ? (
+          <div className="scroll-button-right" onClick={scrollRight}>
+            <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
+          </div>
+        ) : null}
+        <div className="scroll-view-episodes snaps-inline" onClick={clickNdrag}>
+          {apiData.map((i, idx) => (
+            <div
+              key={idx}
+              className="scroll-view-card text-white border-gradient"
+            >
+              {/* <img src={`${i.image}`} alt="character-image" /> */}
+              <p className="cast-name poppins-medium">{i.name}</p>
+            </div>
+          ))}
+        </div>
+        {rightVisible === true ? (
+          <div className="scroll-button-left" onClick={scrollLeft}>
+            <FaAngleRight className="scroll-icon" size={25} color="#9dfe00" />
+          </div>
+        ) : null}
+      </div>
+
+      <div className="travels-medium cast-btn-container">
+        <div
+          style={{
+            fontSize: Size.large,
+          }}
+          className="text-white"
+        >
+          Episodes
+        </div>
+      </div>
+
+      <div className="home-episodes">
+        {leftVisible === true ? (
+          <div className="scroll-button-right" onClick={scrollRight}>
+            <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
+          </div>
+        ) : null}
+        <div className="scroll-view-episodes snaps-inline" onClick={clickNdrag}>
+          {apiData.map((i, idx) => (
+            <div
+              key={idx}
+              className="scroll-view-card text-white border-gradient"
+            >
+              {/* <img src={`${i.image}`} alt="character-image" /> */}
+              <p className="cast-name poppins-medium">{i.name}</p>
             </div>
           ))}
         </div>

@@ -1,141 +1,148 @@
+html,
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 @font-face {
   font-family: "TravelsBlack";
   src: local("TravelsBlack"),
-   url("./assets/Fonts/Font/TTTravels-Black.ttf") format("truetype");
+    url("./assets/Fonts/Font/TTTravels-Black.ttf") format("truetype");
   /* font-weight: bold; */
 }
 
 @font-face {
   font-family: "TravelsBlackItalic";
   src: local("TravelsBlackItalic"),
-  url("./assets/Fonts/Font/TTTravels-BlackItalic.ttf") format("truetype");
+    url("./assets/Fonts/Font/TTTravels-BlackItalic.ttf") format("truetype");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "TravelsBold";
   src: local("TravelsBold"),
-  url("./assets/Fonts/Font/TTTravels-Bold.ttf") format("truetype");
+    url("./assets/Fonts/Font/TTTravels-Bold.ttf") format("truetype");
   font-weight: bold;
 }
-
 
 @font-face {
   font-family: "TravelsBoldItalic";
   src: local("TravelsBoldItalic"),
-   url("./assets/Fonts/Font/TTTravels-BoldItalic.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "TravelsDemiBold";
   src: local("TravelsDemiBold"),
-   url("./assets/Fonts/Font/TTTravels-DemiBold.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-DemiBold.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "TravelsDemiBoldItalic";
   src: local("TravelsDemiBoldItalic"),
-   url("./assets/Fonts/Font/TTTravels-DemiBoldItalic.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-DemiBoldItalic.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "ExtraBold";
   src: local("ExtraBold"),
-   url("./assets/Fonts/Font/TTTravels-ExtraBold.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-ExtraBold.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "ExtraBoldItalic";
   src: local("ExtraBoldItalic"),
-   url("./assets/Fonts/Font/TTTravels-ExtraBoldItalic.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "ExtraLight";
   src: local("ExtraLight"),
-   url("./assets/Fonts/Font/TTTravels-ExtraLight.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-ExtraLight.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "ExtraLightItalic";
   src: local("ExtraLightItalic"),
-   url("./assets/Fonts/Font/TTTravels-ExtraLightItalic.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-ExtraLightItalic.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "Italic";
   src: local("Italic"),
-   url("./assets/Fonts/Font/TTTravels-Italic.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-Italic.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "Light";
   src: local("Light"),
-   url("./assets/Fonts/Font/TTTravels-Light.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-Light.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "LightItalic";
   src: local("LightItalic"),
-   url("./assets/Fonts/Font/TTTravels-LightItalic.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-LightItalic.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "Medium";
   src: local("Medium"),
-   url("./assets/Fonts/Font/TTTravels-Medium.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-Medium.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "MediumItalic";
   src: local("MediumItalic"),
-   url("./assets/Fonts/Font/TTTravels-MediumItalic.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-MediumItalic.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "Regular";
   src: local("Regular"),
-   url("./assets/Fonts/Font/TTTravels-Regular.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-Regular.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "Thin";
   src: local("Thin"),
-   url("./assets/Fonts/Font/TTTravels-Thin.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-Thin.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "ThinItalic";
   src: local("ThinItalic"),
-   url("./assets/Fonts/Font/TTTravels-ThinItalic.ttf") format("truetype");
-   font-weight: bold;
+    url("./assets/Fonts/Font/TTTravels-ThinItalic.ttf") format("truetype");
+  font-weight: bold;
 }
 
+@font-face {
+  font-family: "PoppinsMedium";
+  src: local("PoppinsMedium"),
+    url("./assets/Fonts/Font/Poppins-Medium.ttf") format("truetype");
+  /* font-weight: bold; */
+}

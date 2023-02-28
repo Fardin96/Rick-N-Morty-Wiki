@@ -25,6 +25,7 @@ import "./assets/Fonts/Font/TTTravels-MediumItalic.ttf";
 import "./assets/Fonts/Font/TTTravels-Regular.ttf";
 import "./assets/Fonts/Font/TTTravels-Thin.ttf";
 import "./assets/Fonts/Font/TTTravels-ThinItalic.ttf";
+import "./assets/Fonts/Font/Poppins-Medium.ttf";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
