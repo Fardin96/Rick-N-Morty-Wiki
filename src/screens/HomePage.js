@@ -26,6 +26,9 @@ function HomePage() {
   const navigate = useNavigate();
   const [apiData, setApiData] = useState([]);
 
+  const [leftVisible, setLeftVisible] = useState(true);
+  const [rightVisible, setRightVisible] = useState(true);
+
   const api = `https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8`;
 
   useEffect(() => {
@@ -35,13 +38,56 @@ function HomePage() {
     })();
   }, [api]);
 
+  const whereisTheScroll = ({ scrollL }) => {
+    if (scrollL === 0) {
+      setLeftVisible((prev) => !prev);
+    }
+    if (scrollL === 1105) {
+      setRightVisible((prev) => !prev);
+    }
+    if (scrollL > 0) {
+      setLeftVisible(true);
+    }
+    if (scrollL < 1105) {
+      setRightVisible(true);
+    }
+  };
+
   const scrollLeft = () => {
     const left = document.querySelector(".scroll-view");
+    // whereisTheScroll(left.scrollLeft);
+    const scrollL = left.scrollLeft;
+    if (scrollL === 0) {
+      setLeftVisible((prev) => !prev);
+    }
+    if (scrollL === 1105) {
+      setRightVisible((prev) => !prev);
+    }
+    if (scrollL > 0) {
+      setLeftVisible(true);
+    }
+    if (scrollL < 1105) {
+      setRightVisible(true);
+    }
     left.scrollBy(300, 0);
   };
 
   const scrollRight = () => {
     const right = document.querySelector(".scroll-view");
+    // whereisTheScroll(right.scrollLeft);
+    const scrollL = right.scrollLeft;
+    if (scrollL === 0) {
+      setLeftVisible((prev) => !prev);
+    }
+    if (scrollL === 1105) {
+      setRightVisible((prev) => !prev);
+    }
+    if (scrollL > 0) {
+      setLeftVisible(true);
+    }
+    if (scrollL < 1105) {
+      setRightVisible(true);
+    }
     right.scrollBy(-300, 0);
   };
 
@@ -56,6 +102,20 @@ function HomePage() {
       e.preventDefault();
       startX = e.pageX - slider.offsetLeft;
       scrollL = slider.scrollLeft;
+      console.log(scrollL);
+      // whereisTheScroll(scrollL);
+      if (scrollL === 0) {
+        setLeftVisible((prev) => !prev);
+      }
+      if (scrollL === 1105) {
+        setRightVisible((prev) => !prev);
+      }
+      if (scrollL > 0) {
+        setLeftVisible(true);
+      }
+      if (scrollL < 1105) {
+        setRightVisible(true);
+      }
     });
     slider.addEventListener("mouseup", () => {
       isDown = false;
@@ -107,9 +167,11 @@ function HomePage() {
         </button>
       </div>
       <div className="home-characters">
-        <div className="scroll-button-right" onClick={scrollRight}>
-          <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
-        </div>
+        {leftVisible === true ? (
+          <div className="scroll-button-right" onClick={scrollRight}>
+            <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
+          </div>
+        ) : null}
         <div className="scroll-view snaps-inline" onClick={clickNdrag}>
           {apiData.map((i, idx) => (
             <div
@@ -121,9 +183,11 @@ function HomePage() {
             </div>
           ))}
         </div>
-        <div className="scroll-button-left" onClick={scrollLeft}>
-          <FaAngleRight className="scroll-icon" size={25} color="#9dfe00" />
-        </div>
+        {rightVisible === true ? (
+          <div className="scroll-button-left" onClick={scrollLeft}>
+            <FaAngleRight className="scroll-icon" size={25} color="#9dfe00" />
+          </div>
+        ) : null}
       </div>
     </div>
   );
