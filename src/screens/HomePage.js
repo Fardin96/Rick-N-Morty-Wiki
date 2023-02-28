@@ -136,10 +136,10 @@ function HomePage() {
     <div className="home-root home-bg-image">
       <div className="nav-padding">
         <HeaderText />
+        {/* <HeaderText />
         <HeaderText />
         <HeaderText />
-        <HeaderText />
-        <HeaderText />
+        <HeaderText /> */}
       </div>
       <div className="description-container">
         <div className="watch-now text-white travels-bold">Watch Now</div>
