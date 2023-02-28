@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-return */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -12,8 +13,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaAngleLeft } from "react-icons/fa";
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 import "../App.css";
 import Size from "../assets/constants/Size";
@@ -36,13 +36,45 @@ function HomePage() {
   }, [api]);
 
   const scrollLeft = () => {
-    const left = document.querySelector(".scroll");
+    const left = document.querySelector(".scroll-view");
     left.scrollBy(300, 0);
   };
 
   const scrollRight = () => {
-    const right = document.querySelector(".scroll");
+    const right = document.querySelector(".scroll-view");
     right.scrollBy(-300, 0);
+  };
+
+  const clickNdrag = () => {
+    const slider = document.querySelector(".scroll-view");
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener("mousedown", (e) => {
+      isDown = true;
+      // startX = e.pageX - e.offsetX;
+      startX = e.pageX;
+      scrollLeft = slider.scrollLeft;
+      // console.log(startX);
+    });
+    slider.addEventListener("mouseup", () => {
+      isDown = false;
+    });
+    slider.addEventListener("mouseleave", () => {
+      isDown = false;
+    });
+    slider.addEventListener("mousemove", (e) => {
+      //  = true;
+      if (!isDown) return;
+      e.preventDefault();
+      // let X = e.pageX - e.offsetX;
+      const X = e.pageX;
+      const walk = X - startX;
+      slider.scrollBy(-walk, 0);
+      // console.log("walking", walk);
+      // console.log(e);
+    });
   };
 
   return (
@@ -83,7 +115,7 @@ function HomePage() {
         <div className="scroll-button-right" onClick={scrollRight}>
           <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
         </div>
-        <div className="scroll scroll-view snaps-inline">
+        <div className="scroll-view snaps-inline" onClick={clickNdrag}>
           {apiData.map((i, idx) => (
             <div
               key={idx}
