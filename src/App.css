@@ -134,7 +134,7 @@ p {
   -webkit-text-fill-color: white;
 }
 
-.button{
+.button {
   height: 40px;
   width: 115px;
   border-radius: 7px;
@@ -145,8 +145,8 @@ p {
   -webkit-tap-highlight-color: #9dfe00;
 }
 
-.button:hover{
-color: #9dfe00;
+.button:hover {
+  color: #9dfe00;
 }
 
 .nav-btn:hover {
@@ -271,11 +271,14 @@ color: #9dfe00;
   margin-right: 20px;
 }
 
-.scroll-view, .scroll-view-episodes {
+.scroll-view,
+.scroll-view-episodes,
+.scroll-view-locations {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 17%;
-  gap: 30px;
+  gap: 20px;
+  margin: 1%;
 
   scroll-behavior: smooth;
   overflow: scroll;
@@ -288,11 +291,18 @@ color: #9dfe00;
   /* border: 3px solid red; */
 }
 
-.scroll-view-episodes {
+.scroll-view-episodes,
+.scroll-view-locations {
   grid-auto-columns: 20%;
+  border: 2px solid pink;
 }
 
-.scroll-view-episodes::-webkit-scrollbar{
+.scroll-view-locations::-webkit-scrollbar {
+  -webkit-appearance: none;
+  display: none;
+}
+
+.scroll-view-episodes::-webkit-scrollbar {
   -webkit-appearance: none;
   display: none;
 }
@@ -311,18 +321,37 @@ color: #9dfe00;
   padding-bottom: 15%;
   /* margin: 2%; */
   z-index: inherit;
-  background-color: rgba(156,156,156,0.1);
+  background-color: rgba(156, 156, 156, 0.1);
   /* overflow: hidden; */
   /* border: 3px solid blue; */
 }
 
-.scroll-view-card > img{
+.scroll-view-card > img {
   inline-size: 100%;
   /* aspect-ratio: 1/1;
   object-fit: cover; */
 }
 
-.cast-name{
+.svc-small {
+  /* background-color: #fff; */
+  padding: 4%;
+}
+
+.svc-text-one {
+  border: 1px solid blue;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.svc-text-two {
+  border: 1px solid blue;
+  padding: 0;
+  margin: 0;
+  font-size: 21px;
+}
+
+.cast-name {
   font-size: 16px;
 }
 
@@ -361,7 +390,7 @@ color: #9dfe00;
 }
 
 .snaps-inline > * {
-  /* scroll-snap-align: start; */
+  scroll-snap-align: start;
 }
 
 .border-gradient {
@@ -419,6 +448,6 @@ color: #9dfe00;
 .header-two {
   display: grid;
   grid-auto-flow: column; */
-  /* position: relative; */
-  /* border: 1px solid blue; */
+/* position: relative; */
+/* border: 1px solid blue; */
 /* } */

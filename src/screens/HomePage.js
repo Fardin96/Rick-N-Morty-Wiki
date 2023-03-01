@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable no-useless-return */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -20,65 +21,43 @@ import Size from "../assets/constants/Size";
 import HeaderText from "../components/HeaderText";
 
 import { BsPlayCircle } from "react-icons/bs";
+import { scrollRight, scrollLeft } from "../funtions/Scroll";
 
 const description =
   "Brilliant but boozy scientist Rick hijacks his fretful \n teenage grandson, Morty, for wild escapades \n in other worlds and alternate dimensions.";
 
 function HomePage() {
   const navigate = useNavigate();
-  const [apiData, setApiData] = useState([]);
+  const [characterData, setCharacterData] = useState([]);
+  const [episodeData, setEpisodeData] = useState([]);
+  const [locationData, setLocationData] = useState([]);
 
   const [leftVisible, setLeftVisible] = useState(true);
-  const [rightVisible, setRightVisible] = useState(true);
+  const leftScrollVisibility = (value) => {
+    setLeftVisible(value);
+  };
 
-  const api = `https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8`;
+  const [rightVisible, setRightVisible] = useState(true);
+  const rightScrollVisibility = (value) => {
+    setRightVisible(value);
+  };
+
+  const castApi = `https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8`;
+  const episodeApi = `https://rickandmortyapi.com/api/episode/1,2,3,4,5,6,7,8`;
+  const locationApi = `https://rickandmortyapi.com/api/location/1,2,3,4,5,6,7,8`;
 
   useEffect(() => {
     (async () => {
-      const res = await fetch(api).then((data) => data.json());
-      await setApiData(res);
+      const characterRes = await fetch(castApi).then((data) => data.json());
+      await setCharacterData(characterRes);
+
+      const episodeRes = await fetch(episodeApi).then((data) => data.json());
+      await setEpisodeData(episodeRes);
+
+      const locationRes = await fetch(locationApi).then((data) => data.json());
+      await setLocationData(locationRes);
     })();
-  }, [api]);
-
-  const scrollLeft = () => {
-    const left = document.querySelector(".scroll-view");
-    // whereisTheScroll(left.scrollLeft);
-    left.scrollBy(300, 0);
-
-    const scrollL = left.scrollLeft;
-    if (scrollL === 0) {
-      setLeftVisible((prev) => !prev);
-    }
-    if (scrollL >= 1105) {
-      setRightVisible((prev) => !prev);
-    }
-    if (scrollL > 0) {
-      setLeftVisible(true);
-    }
-    if (scrollL < 1105) {
-      setRightVisible(true);
-    }
-  };
-
-  const scrollRight = () => {
-    const right = document.querySelector(".scroll-view");
-    // whereisTheScroll(right.scrollLeft);
-    right.scrollBy(-300, 0);
-
-    const scrollL = right.scrollLeft;
-    if (scrollL === 0) {
-      setLeftVisible((prev) => !prev);
-    }
-    if (scrollL >= 1105) {
-      setRightVisible((prev) => !prev);
-    }
-    if (scrollL > 0) {
-      setLeftVisible(true);
-    }
-    if (scrollL < 1105) {
-      setRightVisible(true);
-    }
-  };
+  }, []);
 
   const clickNdrag = () => {
     const slider = document.querySelector(".scroll-view");
@@ -125,10 +104,6 @@ function HomePage() {
     <div className="home-root home-bg-image">
       <div className="nav-padding">
         <HeaderText />
-        {/* <HeaderText />
-        <HeaderText />
-        <HeaderText />
-        <HeaderText /> */}
       </div>
 
       <div className="description-container">
@@ -162,14 +137,25 @@ function HomePage() {
         </button>
       </div>
 
+      {/* FIRST */}
       <div className="home-characters">
         {leftVisible === true ? (
-          <div className="scroll-button-right" onClick={scrollRight}>
+          <div
+            className="scroll-button-right"
+            onClick={scrollLeft.bind(
+              this,
+              ".scroll-view",
+              leftScrollVisibility,
+              rightScrollVisibility,
+              leftVisible,
+              rightVisible
+            )}
+          >
             <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
           </div>
         ) : null}
         <div className="scroll-view snaps-inline" onClick={clickNdrag}>
-          {apiData.map((i, idx) => (
+          {characterData.map((i, idx) => (
             <div
               key={idx}
               className="scroll-view-card text-white border-gradient"
@@ -180,81 +166,114 @@ function HomePage() {
           ))}
         </div>
         {rightVisible === true ? (
-          <div className="scroll-button-left" onClick={scrollLeft}>
+          <div
+            className="scroll-button-left"
+            onClick={scrollRight.bind(
+              this,
+              ".scroll-view",
+              rightScrollVisibility,
+              leftScrollVisibility,
+              rightVisible,
+              leftVisible
+            )}
+          >
             <FaAngleRight className="scroll-icon" size={25} color="#9dfe00" />
           </div>
         ) : null}
       </div>
+      {/* FIRST */}
 
-      <div className="travels-medium cast-btn-container">
-        <div
-          style={{
-            fontSize: Size.large,
-          }}
-          className="text-white"
-        >
-          Episodes
+      {/* SECOND */}
+      <>
+        <div className="travels-medium cast-btn-container">
+          <div
+            style={{
+              fontSize: Size.large,
+            }}
+            className="text-white"
+          >
+            Episodes
+          </div>
         </div>
-      </div>
-
-      <div className="home-episodes">
-        {leftVisible === true ? (
-          <div className="scroll-button-right" onClick={scrollRight}>
+        <div className="home-episodes">
+          {/* {leftVisible === true ? ( */}
+          <div
+            className="scroll-button-right"
+            onClick={scrollLeft.bind(this, ".scroll-view-episodes")}
+          >
             <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
           </div>
-        ) : null}
-        <div className="scroll-view-episodes snaps-inline" onClick={clickNdrag}>
-          {apiData.map((i, idx) => (
-            <div
-              key={idx}
-              className="scroll-view-card text-white border-gradient"
-            >
-              {/* <img src={`${i.image}`} alt="character-image" /> */}
-              <p className="cast-name poppins-medium">{i.name}</p>
-            </div>
-          ))}
-        </div>
-        {rightVisible === true ? (
-          <div className="scroll-button-left" onClick={scrollLeft}>
+          {/* ) : null} */}
+          <div
+            className="scroll-view-episodes snaps-inline"
+            onClick={clickNdrag}
+          >
+            {episodeData.map((i, idx) => (
+              <div key={idx} className="svc-small text-white border-gradient">
+                <p className="svc-text-one travels-medium">{i.episode}</p>
+                <p className="svc-text-two travels-medium">{i.name}</p>
+              </div>
+            ))}
+          </div>
+          {/* {rightVisible === true ? ( */}
+          <div
+            className="scroll-button-left"
+            onClick={scrollRight.bind(this, ".scroll-view-episodes")}
+          >
             <FaAngleRight className="scroll-icon" size={25} color="#9dfe00" />
           </div>
-        ) : null}
-      </div>
-
-      <div className="travels-medium cast-btn-container">
-        <div
-          style={{
-            fontSize: Size.large,
-          }}
-          className="text-white"
-        >
-          Episodes
+          {/* ) : null} */}
         </div>
-      </div>
+      </>
+      {/* SECOND */}
 
-      <div className="home-episodes">
-        {leftVisible === true ? (
-          <div className="scroll-button-right" onClick={scrollRight}>
+      {/* THIRD */}
+      <>
+        <div className="travels-medium cast-btn-container">
+          <div
+            style={{
+              fontSize: Size.large,
+            }}
+            className="text-white"
+          >
+            Locations
+          </div>
+        </div>
+
+        <div className="home-episodes">
+          {/* {leftVisible === true ? ( */}
+          <div
+            className="scroll-button-right"
+            onClick={scrollLeft.bind(this, ".scroll-view-locations")}
+          >
             <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
           </div>
-        ) : null}
-        <div className="scroll-view-episodes snaps-inline" onClick={clickNdrag}>
-          {apiData.map((i, idx) => (
-            <div
-              key={idx}
-              className="scroll-view-card text-white border-gradient"
-            >
-              {/* <img src={`${i.image}`} alt="character-image" /> */}
-              <p className="cast-name poppins-medium">{i.name}</p>
-            </div>
-          ))}
-        </div>
-        {rightVisible === true ? (
-          <div className="scroll-button-left" onClick={scrollLeft}>
+          {/* ) : null} */}
+          <div
+            className="scroll-view-locations snaps-inline"
+            onClick={clickNdrag}
+          >
+            {locationData.map((i, idx) => (
+              <div
+                key={idx}
+                className="scroll-view-card text-white border-gradient"
+              >
+                {/* <img src={`${i.image}`} alt="character-image" /> */}
+                <p className="cast-name poppins-medium">{i.name}</p>
+              </div>
+            ))}
+          </div>
+          {/* {rightVisible === true ? ( */}
+          <div
+            className="scroll-button-left"
+            onClick={scrollRight.bind(this, ".scroll-view-locations")}
+          >
             <FaAngleRight className="scroll-icon" size={25} color="#9dfe00" />
           </div>
-        ) : null}
-      </div>
+          {/* ) : null} */}
+        </div>
+      </>
+      {/* THIRD */}
     </div>
   );
 }
