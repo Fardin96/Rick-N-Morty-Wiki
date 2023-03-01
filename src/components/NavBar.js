@@ -9,7 +9,7 @@ import HeaderImage from "./HeaderImage";
 function Navbar() {
   return (
     // <nav>
-    <div className="d-flex justify-content-center nav-bar">
+    <div className="nav-bar">
       <Link to="/">
         <HeaderImage />
       </Link>

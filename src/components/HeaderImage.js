@@ -10,15 +10,16 @@ function HeaderImage() {
   return (
     <div>
       <img
+        className="nav-img"
         src={HEADER_IMAGE}
         alt="HEADER_IMAGE"
-        style={{
-          height: Size.header_height,
-          width: Size.header_width,
-          margin: Margin.header_image_top,
-          padding: 0,
-          // border: "1px solid red",
-        }}
+        // style={{
+        //   height: Size.header_height,
+        //   width: Size.header_width,
+        //   margin: Margin.header_image_top,
+        //   padding: 0,
+        //   // border: "1px solid red",
+        // }}
       />
     </div>
   );
