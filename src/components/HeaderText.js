@@ -15,6 +15,7 @@ function HeaderText() {
           <img className="bubble" src={BUBBLE} alt="BUBBLE-LOGO" />
           <img className="pill" src={PILL} alt="PILL-LOGO" />
           <h1 className="header travels-bold-italic text-white">THE</h1>
+          <h1 className="header travels-bold-italic text-white">THE</h1>
           <img className="portal" src={PORTAL} alt="PORTAL-LOGO" />
           <h1 className="header header-padding travels-bold ">RICK &</h1>
           <img className="gun" src={GUN} alt="GUN-LOGO" />
