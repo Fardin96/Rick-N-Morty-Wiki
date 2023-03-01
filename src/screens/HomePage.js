@@ -32,15 +32,13 @@ function HomePage() {
   const [episodeData, setEpisodeData] = useState([]);
   const [locationData, setLocationData] = useState([]);
 
-  const [leftVisible, setLeftVisible] = useState(true);
-  const leftScrollVisibility = (value) => {
-    setLeftVisible(value);
-  };
+  const [leftVisible, setLeftVisible] = useState(false);
+  const [leftEpiVisible, setLeftEpiVisible] = useState(false);
+  const [leftLocVisible, setLeftLocVisible] = useState(false);
 
   const [rightVisible, setRightVisible] = useState(true);
-  const rightScrollVisibility = (value) => {
-    setRightVisible(value);
-  };
+  const [rightEpiVisible, setRightEpiVisible] = useState(true);
+  const [righLocVisible, setRighLocVisible] = useState(true);
 
   const castApi = `https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8`;
   const episodeApi = `https://rickandmortyapi.com/api/episode/1,2,3,4,5,6,7,8`;
@@ -145,8 +143,8 @@ function HomePage() {
             onClick={scrollLeft.bind(
               this,
               ".scroll-view",
-              leftScrollVisibility,
-              rightScrollVisibility,
+              setLeftVisible,
+              setRightVisible,
               leftVisible,
               rightVisible
             )}
@@ -171,8 +169,8 @@ function HomePage() {
             onClick={scrollRight.bind(
               this,
               ".scroll-view",
-              rightScrollVisibility,
-              leftScrollVisibility,
+              setRightVisible,
+              setLeftVisible,
               rightVisible,
               leftVisible
             )}
@@ -196,14 +194,21 @@ function HomePage() {
           </div>
         </div>
         <div className="home-episodes">
-          {/* {leftVisible === true ? ( */}
-          <div
-            className="scroll-button-right"
-            onClick={scrollLeft.bind(this, ".scroll-view-episodes")}
-          >
-            <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
-          </div>
-          {/* ) : null} */}
+          {leftEpiVisible === true ? (
+            <div
+              className="scroll-button-right"
+              onClick={scrollLeft.bind(
+                this,
+                ".scroll-view-episodes",
+                setLeftEpiVisible,
+                setRightEpiVisible,
+                leftEpiVisible,
+                rightEpiVisible
+              )}
+            >
+              <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
+            </div>
+          ) : null}
           <div
             className="scroll-view-episodes snaps-inline"
             onClick={clickNdrag}
@@ -215,14 +220,21 @@ function HomePage() {
               </div>
             ))}
           </div>
-          {/* {rightVisible === true ? ( */}
-          <div
-            className="scroll-button-left"
-            onClick={scrollRight.bind(this, ".scroll-view-episodes")}
-          >
-            <FaAngleRight className="scroll-icon" size={25} color="#9dfe00" />
-          </div>
-          {/* ) : null} */}
+          {rightEpiVisible === true ? (
+            <div
+              className="scroll-button-left"
+              onClick={scrollRight.bind(
+                this,
+                ".scroll-view-episodes",
+                setRightEpiVisible,
+                setLeftEpiVisible,
+                rightEpiVisible,
+                leftEpiVisible
+              )}
+            >
+              <FaAngleRight className="scroll-icon" size={25} color="#9dfe00" />
+            </div>
+          ) : null}
         </div>
       </>
       {/* SECOND */}
@@ -241,36 +253,47 @@ function HomePage() {
         </div>
 
         <div className="home-episodes">
-          {/* {leftVisible === true ? ( */}
-          <div
-            className="scroll-button-right"
-            onClick={scrollLeft.bind(this, ".scroll-view-locations")}
-          >
-            <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
-          </div>
-          {/* ) : null} */}
+          {leftLocVisible === true ? (
+            <div
+              className="scroll-button-right"
+              onClick={scrollLeft.bind(
+                this,
+                ".scroll-view-locations",
+                setLeftLocVisible,
+                setRighLocVisible,
+                leftLocVisible,
+                righLocVisible
+              )}
+            >
+              <FaAngleLeft className="scroll-icon" size={25} color="#9dfe00" />
+            </div>
+          ) : null}
           <div
             className="scroll-view-locations snaps-inline"
             onClick={clickNdrag}
           >
             {locationData.map((i, idx) => (
-              <div
-                key={idx}
-                className="scroll-view-card text-white border-gradient"
-              >
-                {/* <img src={`${i.image}`} alt="character-image" /> */}
-                <p className="cast-name poppins-medium">{i.name}</p>
+              <div key={idx} className="svc-small text-white border-gradient">
+                <p className="svc-text-one travels-medium">{`#${i.id}`}</p>
+                <p className="svc-text-two travels-medium">{i.name}</p>
               </div>
             ))}
           </div>
-          {/* {rightVisible === true ? ( */}
-          <div
-            className="scroll-button-left"
-            onClick={scrollRight.bind(this, ".scroll-view-locations")}
-          >
-            <FaAngleRight className="scroll-icon" size={25} color="#9dfe00" />
-          </div>
-          {/* ) : null} */}
+          {righLocVisible === true ? (
+            <div
+              className="scroll-button-left"
+              onClick={scrollRight.bind(
+                this,
+                ".scroll-view-locations",
+                setRighLocVisible,
+                setLeftLocVisible,
+                righLocVisible,
+                leftLocVisible
+              )}
+            >
+              <FaAngleRight className="scroll-icon" size={25} color="#9dfe00" />
+            </div>
+          ) : null}
         </div>
       </>
       {/* THIRD */}
