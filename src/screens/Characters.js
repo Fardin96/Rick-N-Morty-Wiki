@@ -25,10 +25,10 @@ function Characters() {
 
   return (
     <div className="App nav-padding cast-bg-image">
-      <div className="container">
-        <div className="row">
+      <div className="cast-root">
+        <div>
           <div
-            className="d-flex justify-content-between align-items-center travels-demi-bold text-blue"
+            className="cast-nav-btn travels-demi-bold text-blue"
             style={{
               fontSize: Size.pill_height,
               // border: "2px solid orange"
@@ -37,8 +37,10 @@ function Characters() {
             The Cast
             <NavigationButtons />
           </div>
+
           <Card apiData={apiData} />
         </div>
+
         <Pagination
           setPage={setPage}
           page={page}
