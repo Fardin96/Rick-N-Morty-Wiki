@@ -12,6 +12,7 @@ import HomePage from "./screens/HomePage";
 import Characters from "./screens/Characters";
 import Episodes from "./screens/Episodes";
 import Locations from "./screens/Locatons";
+import CastDetails from "./screens/CastDetails";
 import Navbar from "./components/NavBar";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/characters" element={<Characters />} />
           <Route path="/episodes" element={<Episodes />} />
           <Route path="/locations" element={<Locations />} />
+          <Route path="/castDetails" element={<CastDetails />} />
         </Routes>
       </Router>
     </div>

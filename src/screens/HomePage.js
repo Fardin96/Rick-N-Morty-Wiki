@@ -157,6 +157,9 @@ function HomePage() {
             <div
               key={idx}
               className="scroll-view-card text-white border-gradient"
+              onClick={() => {
+                navigate("/castDetails");
+              }}
             >
               <img src={`${i.image}`} alt="character-image" />
               <p className="cast-name poppins-medium">{i.name}</p>
