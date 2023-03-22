@@ -10,6 +10,7 @@ import Size from "../../assets/constants/Size";
 
 function Card({ apiData }) {
   const { results } = apiData;
+  // console.log("what is this? ", apiData);
 
   // const res = results?.map((item) => (
   //   <div
@@ -32,7 +33,7 @@ function Card({ apiData }) {
     //   {res}
     // </div>
     <div className="cast-card-root">
-      {results.map((i, idx) => (
+      {results?.map((i, idx) => (
         <div key={idx} className="scroll-view-card text-white border-gradient">
           <img src={`${i.image}`} alt="character-image" />
           <p className="cast-name poppins-medium">{i.name}</p>

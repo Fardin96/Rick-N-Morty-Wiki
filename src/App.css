@@ -337,6 +337,10 @@ h1 {
   /* border: 3px solid blue; */
 }
 
+.scroll-view-card:hover {
+  cursor: pointer;
+}
+
 .scroll-view-card > img {
   inline-size: 100%;
   /* aspect-ratio: 1/1;
@@ -410,6 +414,7 @@ h1 {
 
 .border-gradient {
   border: 0.9px solid;
+  /* border-color: blue; */
   /* border-radius: 10px; */
   border-image-slice: 1;
   border-image-source: linear-gradient(#14d9e5, #9dfe00);
@@ -480,7 +485,8 @@ h1 {
   max-width: 100%;
   align-items: center;
   margin-bottom: 56px;
-  border: 3px solid blue;
+  font-size: 50px;
+  /* border: 3px solid blue; */
 }
 
 .cast-card-root {
@@ -489,4 +495,16 @@ h1 {
   grid-template-columns: auto auto auto auto auto;
   gap: 20px;
   border: 3px solid red;
+}
+
+.cast-details-bg-image {
+  background-color: #191d29;
+  background-image: url("./assets/images/cast-details/Background.png"),
+    url("./assets/images/cast-details/Star.png");
+  background-size: contain, contain;
+  background-position: top center, bottom center;
+  background-position-y: top, 70%;
+  background-repeat: no-repeat, no-repeat;
+  min-height: 100vh;
+  /* outline: 3px solid red; */
 }
