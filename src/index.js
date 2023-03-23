@@ -2,6 +2,9 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable quotes */
 import React from "react";
+import { Provider, createStore } from "react-redux";
+import { applyMiddleware, combineReducers } from "redux";
+import thunk from "redux-thunk";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
@@ -27,11 +30,19 @@ import "./assets/Fonts/Font/TTTravels-Thin.ttf";
 import "./assets/Fonts/Font/TTTravels-ThinItalic.ttf";
 import "./assets/Fonts/Font/Poppins-Medium.ttf";
 
+import { CharactersReducer } from "../store/reducer/reducer";
+
+const rootReducer = combineReducers({ characters: CharactersReducer });
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
