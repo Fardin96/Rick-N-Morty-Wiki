@@ -3,26 +3,37 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from "react";
-
 import "../App.css";
+import { useDispatch, useSelector } from "react-redux";
+
 import Card from "../components/Cards/Card";
 import Pagination from "../components/Pagination/Pagination";
 import NavigationButtons from "../components/NavigationButtons";
+import { fetchCharacterList } from "../store/actions/characterActions";
 
 function Characters() {
   const [page, setPage] = useState(1);
   const [apiData, setApiData] = useState([]);
+  const dispatch = useDispatch();
+  const res = useSelector((state) => state.characters);
+
+  // console.log("data er state ta ki? ", res);
 
   const api = `https://rickandmortyapi.com/api/character/?page=${page}`;
 
   useEffect(() => {
     (async () => {
-      const res = await fetch(api).then((data) => data.json());
-      await setApiData(res);
-      // console.log("this is begotten form api: ", res);
+      // const res = await fetch(api).then((data) => data.json());
+      // const res =
+      await dispatch(fetchCharacterList(api));
+
       // this useEffect is rendered twice
     })();
   }, [api]);
+
+  // start here
+  // setApiData(res.data.length > 0 ? res.data : []);
+  // console.log("old response: ", res);
 
   return (
     <div className="App nav-padding cast-bg-image">
@@ -34,8 +45,13 @@ function Characters() {
             The Cast
             <NavigationButtons />
           </div>
-
-          <Card apiData={apiData} />
+          {res.loading ? (
+            <p className="cast-nav-btn travels-demi-bold text-blue">
+              Loading...
+            </p>
+          ) : (
+            <Card apiData={apiData} />
+          )}
         </div>
 
         <Pagination

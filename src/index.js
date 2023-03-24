@@ -2,13 +2,17 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable quotes */
 import React from "react";
-import { Provider, createStore } from "react-redux";
-import { applyMiddleware, combineReducers } from "redux";
-import thunk from "redux-thunk";
 import ReactDOM from "react-dom/client";
+
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+import { CharactersReducer } from "./store/reducer/characterReducer";
 
 import "./assets/Fonts/Font/TTTravels-Black.ttf";
 import "./assets/Fonts/Font/TTTravels-BlackItalic.ttf";
@@ -30,7 +34,7 @@ import "./assets/Fonts/Font/TTTravels-Thin.ttf";
 import "./assets/Fonts/Font/TTTravels-ThinItalic.ttf";
 import "./assets/Fonts/Font/Poppins-Medium.ttf";
 
-import { CharactersReducer } from "../store/reducer/reducer";
+// import {CharactersReducer } from './'
 
 const rootReducer = combineReducers({ characters: CharactersReducer });
 const store = createStore(rootReducer, applyMiddleware(thunk));
