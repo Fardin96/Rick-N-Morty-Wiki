@@ -15,6 +15,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 
 import "../App.css";
 import Size from "../assets/constants/Size";
@@ -22,12 +23,18 @@ import HeaderText from "../components/HeaderText";
 
 import { BsPlayCircle } from "react-icons/bs";
 import { scrollRight, scrollLeft } from "../funtions/Scroll";
+import { fetchCharacterList } from "../store/actions/characterActions";
 
 const description =
   "Brilliant but boozy scientist Rick hijacks his fretful \n teenage grandson, Morty, for wild escapades \n in other worlds and alternate dimensions.";
 
 function HomePage() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const data = useSelector((state) =>
+    console.log("homepage er obosta? ", state)
+  );
+
   const [characterData, setCharacterData] = useState([]);
   const [episodeData, setEpisodeData] = useState([]);
   const [locationData, setLocationData] = useState([]);
@@ -43,9 +50,11 @@ function HomePage() {
   const castApi = `https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8`;
   const episodeApi = `https://rickandmortyapi.com/api/episode/1,2,3,4,5,6,7,8`;
   const locationApi = `https://rickandmortyapi.com/api/location/1,2,3,4,5,6,7,8`;
+  // const api = `https://rickandmortyapi.com/api/character/?page=1`;
 
   useEffect(() => {
     (async () => {
+      // await dispatch(fetchCharacterList(api));
       const characterRes = await fetch(castApi).then((data) => data.json());
       await setCharacterData(characterRes);
 

@@ -13,9 +13,9 @@ import { fetchCharacterList } from "../store/actions/characterActions";
 
 function Characters() {
   const [page, setPage] = useState(1);
-  const [apiData, setApiData] = useState([]);
+
   const dispatch = useDispatch();
-  const res = useSelector((state) => state.characters);
+  const response = useSelector((state) => state.characters);
 
   // console.log("data er state ta ki? ", res);
 
@@ -23,41 +23,39 @@ function Characters() {
 
   useEffect(() => {
     (async () => {
-      // const res = await fetch(api).then((data) => data.json());
-      // const res =
-      await dispatch(fetchCharacterList(api));
+      // await dispatch(fetchCharacterList(api));
 
-      // this useEffect is rendered twice
+      // rendered x2
+      console.log("old response: ", response);
     })();
   }, [api]);
 
-  // start here
-  // setApiData(res.data.length > 0 ? res.data : []);
-  // console.log("old response: ", res);
+  // rendered x4
+  // console.log("loading: ", response);
 
   return (
     <div className="App nav-padding cast-bg-image">
       {/* {console.log("first")} */}
-      {/* this is rendered twice */}
+      {/* rendered x3 */}
       <div className="cast-root">
         <div>
           <div className="cast-nav-btn travels-demi-bold text-blue">
             The Cast
             <NavigationButtons />
           </div>
-          {res.loading ? (
+          {response.loading ? (
             <p className="cast-nav-btn travels-demi-bold text-blue">
               Loading...
             </p>
           ) : (
-            <Card apiData={apiData} />
+            <Card apiData={response.data} />
           )}
         </div>
 
         <Pagination
           setPage={setPage}
           page={page}
-          totalPages={apiData.info?.pages}
+          totalPages={response.data.info?.pages}
         />
       </div>
     </div>
