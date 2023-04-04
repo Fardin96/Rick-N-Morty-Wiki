@@ -8,13 +8,13 @@ import HeaderImage from "./HeaderImage";
 
 function Navbar() {
   return (
-    <nav>
-      <div className="d-flex justify-content-center">
-        <Link to="/">
-          <HeaderImage />
-        </Link>
-      </div>
-    </nav>
+    // <nav>
+    <div className="nav-bar">
+      <Link to="/">
+        <HeaderImage />
+      </Link>
+    </div>
+    // </nav>
   );
 }
 

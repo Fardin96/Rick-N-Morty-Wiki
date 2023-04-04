@@ -21,9 +21,11 @@ function Episodes() {
   useEffect(() => {
     (async () => {
       const res = await fetch(api).then((data) => data.json());
-      const pageCount = await fetch(pageApi).then((data) => data.json());
       await setApiData(res);
       // console.log("this is the res:", res);
+      // this useEffect is rendered twice
+
+      const pageCount = await fetch(pageApi).then((data) => data.json());
       await setTotalPages(pageCount);
 
       const characterInfo = await Promise.all(
@@ -32,30 +34,21 @@ function Episodes() {
         )
       );
 
-      // console.log("char info:", characterInfo);
-
       setResults(characterInfo);
     })();
   }, [api]);
 
-  // console.log("episode konta?", apiData);
-
   return (
-    <div className="App">
-      <div
-        className="container"
-        // style={{ border: "2px solid orange" }}
-      >
+    <div className="App nav-padding cast-bg-image">
+      {/* {console.log("first")} */}
+      {/* <- this whole screen is rendered 6-7 times!!! */}
+      <div className="container">
         <div className="row">
-          <div
-            className="d-flex flex-column align-items-center justify-content-between text-white"
-            // style={{ border: "1px solid blue" }}
-          >
+          <div className="d-flex flex-column align-items-center justify-content-between text-white">
             <div
               className="container d-flex align-items-center justify-content-between travels-demi-bold"
               style={{
                 fontSize: Size.medium,
-                // border: "1px solid green",
               }}
             >
               <div className="my-1 mx-1">{`Episode: ${apiData?.episode}`}</div>

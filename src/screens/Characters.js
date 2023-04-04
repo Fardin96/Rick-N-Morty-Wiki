@@ -3,49 +3,59 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from "react";
+import "../App.css";
+import { useDispatch, useSelector } from "react-redux";
 
 import Card from "../components/Cards/Card";
 import Pagination from "../components/Pagination/Pagination";
 import NavigationButtons from "../components/NavigationButtons";
-import "../App.css";
-import Size from "../assets/constants/Size";
+import { fetchCharacterList } from "../store/actions/characterActions";
 
 function Characters() {
   const [page, setPage] = useState(1);
-  const [apiData, setApiData] = useState([]);
+
+  const dispatch = useDispatch();
+  const response = useSelector((state) => state.characters);
+
+  // console.log("data er state ta ki? ", res);
 
   const api = `https://rickandmortyapi.com/api/character/?page=${page}`;
 
   useEffect(() => {
     (async () => {
-      const res = await fetch(api).then((data) => data.json());
-      await setApiData(res);
+      // await dispatch(fetchCharacterList(api));
+
+      // rendered x2
+      console.log("old response: ", response);
     })();
   }, [api]);
 
+  // rendered x4
+  // console.log("loading: ", response);
+
   return (
-    <div className="App">
-      <div
-        className="container"
-        // style={{ border: "2px solid orange" }}
-      >
-        <div className="row">
-          <div
-            className="d-flex justify-content-between align-items-center travels-demi-bold text-white"
-            style={{
-              fontSize: Size.pill_height,
-              // border: "2px solid orange"
-            }}
-          >
+    <div className="App nav-padding cast-bg-image">
+      {/* {console.log("first")} */}
+      {/* rendered x3 */}
+      <div className="cast-root">
+        <div>
+          <div className="cast-nav-btn travels-demi-bold text-blue">
             The Cast
             <NavigationButtons />
           </div>
-          <Card apiData={apiData} />
+          {response.loading ? (
+            <p className="cast-nav-btn travels-demi-bold text-blue">
+              Loading...
+            </p>
+          ) : (
+            <Card apiData={response.data} />
+          )}
         </div>
+
         <Pagination
           setPage={setPage}
           page={page}
-          totalPages={apiData.info?.pages}
+          totalPages={response.data.info?.pages}
         />
       </div>
     </div>
